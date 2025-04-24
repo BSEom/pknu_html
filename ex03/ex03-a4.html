@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      fieldset {
+        padding: 35px;
+      }
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="background-color: #00ffa2">
+      <a href="../index.html"> <strong>홈으로</strong> </a>
+    </header>
+    <hr />
+
+    <form action="#">
+      <fieldset style="padding-top: 0px; inline-size: fit-content">
+        <h1>프런트엔드 개발자 지원서</h1>
+
+        <span>
+          HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을
+          찾습니다.
+        </span>
+        <hr />
+
+        <h4>개인 정보</h4>
+        <table style="padding-left: 35px">
+          <tr>
+            <td><label for="name">이름: </label></td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="공백 없이 입력하세요."
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tel">연락처: </label></td>
+            <td>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                pattern="010-[0-9]{4}-[0-9]{4}"
+                placeholder="예) 010-0000-9999"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+
+        <h4>지원 분야</h4>
+        <p style="padding-left: 35px">
+          <input type="radio" name="job_type" id="web-pub" required />
+          <label for="web-pub">웹 퍼블리싱</label><br />
+          <input type="radio" name="job_type" id="web-prog" />
+          <label for="web-prog">웹 애플리케이션 개발</label><br />
+          <input type="radio" name="job_type" id="eng" />
+          <label for="eng">개발 환경 개선</label><br />
+        </p>
+
+        <h4>지원 동기</h4>
+        <textarea
+          name="res"
+          id="res"
+          maxlength="60"
+          rows="5"
+          placeholder="본사 지원 동기를 간략히 써 주세요."
+          style="width: 400px"
+          required
+        ></textarea>
+        <br />
+        <button type="submit">접수하기</button>
+        <button type="reset">다시 쓰기</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
