@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상선택자</title>
+    <style>
+      a {
+        color: turquoise;
+      }
+      a:visited {
+        color: crimson;
+      }
+      a:active {
+        color: blue;
+      }
+      /* 버튼과 인풋이 비홯성화 되었을 때, 단 a링크는 동작안함 */
+      input:disabled,
+      button:disabled {
+        background-color: aqua;
+      }
+      /* 선택되어 누르는 동안 */
+      input:active {
+        background-color: yellow;
+      }
+      /* 커서가 있는 동안 */
+      input:focus {
+        background-color: #00ffa3;
+      }
+      .red-focus:focus {
+        background-color: red;
+      }
+      .blue-focus:focus {
+        background-color: blue;
+      }
+      div {
+        border: 1px solid black;
+        width: 20px;
+        height: 20px;
+        margin: 1px;
+        background-color: #00ffa3;
+        display: inline-block;
+      }
+      div:hover {
+        width: 40px;
+        background-color: black;
+      }
+      input[type]:checked + label {
+        color: red;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>가상선택자 응용</h1>
+    <a href="https://www.naver.com">네이버 링크</a>
+    <input type="text" disabled />
+    <button disabled>전송</button>
+    <input type="text" />
+    <hr />
+    <input type="text" class="red-focus" value="클릭하면 빨갛게 변합니다." />
+    <input type="text" class="blue-focus" value="클릭하면 파랗게게 변합니다." />
+    <hr />
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <hr />
+    <input type="checkbox" id="eat" />
+    <label for="eat">간식</label>
+    <input type="checkbox" id="meal" />
+    <label for="meal">식사</label>
+  </body>
+</html>
