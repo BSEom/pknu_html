@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        margin: 10px;
+        display: inline-block;
+      }
+      #ex1 {
+        background: linear-gradient(to right bottom, #000, white);
+      }
+      #ex2 {
+        background: linear-gradient(45deg, #000, white);
+      }
+      #ex3 {
+        background: linear-gradient(180deg, #000, white 40%, #000);
+      }
+      #ex4 {
+        background: radial-gradient(white, yellow, red);
+      }
+      #ex5 {
+        background: radial-gradient(circle, white, yellow, red);
+      }
+      #ex6 {
+        background: radial-gradient(circle closest-side, white, yellow, green);
+      }
+      #ex7 {
+        background: radial-gradient(circle at 20% 20%, white, blue);
+      }
+      #ex8 {
+        background: radial-gradient(white, #00ffa3 10%, blue 60%);
+      }
+      #ex9 {
+        background: repeating-linear-gradient(
+          black,
+          black 20px,
+          #00ffa3 20px,
+          #00ffa3 40px
+        );
+      }
+      #ex10 {
+        background: repeating-radial-gradient(
+          circle,
+          white,
+          white 10%,
+          #ccc 10%,
+          #ccc 20%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <header style="background-color: #00ffa3">
+      <a href="../index.html"> <strong>홈으로</strong> </a>
+    </header>
+    <hr />
+
+    <div id="ex1"></div>
+    <div id="ex2"></div>
+    <div id="ex3"></div>
+    <div id="ex4"></div>
+    <div id="ex5"></div>
+    <div id="ex6"></div>
+    <div id="ex7"></div>
+    <div id="ex8"></div>
+    <div id="ex9"></div>
+    <div id="ex10"></div>
+  </body>
+</html>

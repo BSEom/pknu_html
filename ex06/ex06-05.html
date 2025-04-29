@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --myred1: red;
+        --myred2: rgb(253, 84, 84);
+        --myred3: rgb(255, 179, 179);
+
+        --mygreen1: rgb(0, 255, 0);
+        --mygreen2: rgb(82, 255, 82);
+        --mygreen3: rgb(186, 255, 186);
+
+        --myblue1: blue;
+        --myblue2: rgb(72, 72, 253);
+        --myblue3: rgb(163, 163, 255);
+
+        --myyellow1: yellow;
+        --myyellow2: rgb(255, 255, 82);
+        --myyellow3: rgb(255, 255, 163);
+      }
+      header,
+      footer {
+        width: 300px;
+        height: 40px;
+        background-color: var(--myblue3);
+        border: 5px solid var(--myblue2);
+        box-sizing: border-box;
+      }
+      nav {
+        width: 50px;
+        height: 250px;
+        background-color: var(--mygreen3);
+        border: 5px solid var(--mygreen2);
+        box-sizing: border-box;
+        float: left;
+      }
+      main {
+        width: 250px;
+        box-sizing: border-box;
+        margin-left: 50px;
+      }
+      article {
+        height: 50px;
+        background-color: var(--myyellow3);
+        border: 5px solid var(--myyellow2);
+        box-sizing: border-box;
+      }
+      section {
+        height: 200px;
+        background-color: var(--myred3);
+        border: 5px solid var(--myred2);
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="background-color: #00ffa3">
+      <a href="../index.html"> <strong>홈으로</strong> </a>
+    </header>
+    <hr />
+
+    <!-- div.box>header{header}+div>nav{nav}+main>article{article}+section{section}^^footer{footer} -->
+    <div class="box">
+      <header>header</header>
+      <div>
+        <nav>nav</nav>
+        <main>
+          <article>article</article>
+          <section>section</section>
+        </main>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
