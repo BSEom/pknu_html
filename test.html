@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>테스트용</title>
     <style>
-      header {
+      #header {
         background-color: #00ffa3;
         height: 80px;
         position: sticky;
@@ -39,24 +39,28 @@
         float: left;
         margin-left: -17px;
       }
+      a {
+        text-decoration: none;
+        color: black;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <span class="logo" id="logo">logo</span>
+    <div id="header">
+      <span class="logo" id="logo"><a href="">logo</a></span>
       <nav>
         <ul>
-          <li class="bar" id="home">홈</li>
-          <li class="bar" id="ss">살펴보기</li>
-          <li class="bar" id="etc">기타</li>
-          <li class="bar" id="menu">메뉴</li>
+          <li class="bar" id="home"><a href="#">홈</a></li>
+          <li class="bar" id="ss"><a href="#">살펴보기</a></li>
+          <li class="bar" id="etc"><a href="#">기타</a></li>
+          <li class="bar" id="menu"><a href="#">메뉴</a></li>
         </ul>
         <!-- <span class="bar" id="home">홈</span>
         <span class="bar" id="ss">살펴보기</span>
         <span class="bar" id="etc">기타</span>
         <span class="bar" id="menu">메뉴</span> -->
       </nav>
-    </header>
+    </div>
 
     <div>창</div>
   </body>

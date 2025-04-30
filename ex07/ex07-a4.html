@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #dbdbdb;
+        display: flex;
+        /* 세로 라인 중앙 */
+        justify-content: center;
+        /* 가로 라인 중앙 */
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .answer-container {
+        background-color: white;
+        padding: 20px 50px;
+        /* padding-left: 50px; */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        width: 380px;
+        border: 5px solid slateblue;
+      }
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      div {
+        padding-left: 18px;
+        padding-bottom: 15px;
+        /* margin-bottom: 20px; */
+      }
+      label {
+        padding-right: 10px;
+      }
+      #change_model {
+        width: 70%;
+        padding: 7px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .btn_group {
+        padding-left: 0;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 0;
+        border-radius: 5px;
+        background-color: slateblue;
+        color: white;
+        /* font-size: 1rem; */
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #00ffa3;
+        color: black;
+      }
+      #btn_reset:active {
+        background-color: #ff1e00;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="answer-container">
+      <h2>휴대전화 현황 조사</h2>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOOieVRXO77qNlynfI7BotfEM70SPRPEctqyBLAoK4LgnpJA/formResponse"
+      >
+        <p>
+          <small>
+            귀하께서 사용중인 통신사와 휴대전화 모델에 관한 설문조사입니다
+          </small>
+        </p>
+        <h3>1. 사용중인 통신사</h3>
+        <div class="telc_check">
+          <input
+            type="radio"
+            id="SKT"
+            name="entry.1959079947"
+            value="SKT"
+            required
+          />
+          <label for="SKT">SKT</label>
+          <input type="radio" id="KT" name="entry.1959079947" value="KT" />
+          <label for="KT">KT</label>
+          <input type="radio" id="LG" name="entry.1959079947" value="LG" />
+          <label for="LG">LG</label>
+          <input
+            type="radio"
+            id="echo"
+            name="entry.1959079947"
+            value="알뜰폰"
+          />
+          <label for="echo">알뜰폰</label>
+        </div>
+
+        <h3>2. 사용중인 휴대전화 브랜드</h3>
+        <div class="brand_check">
+          <input
+            type="radio"
+            name="entry.832837152"
+            id="Samsung"
+            value="Samsung"
+          />
+          <label for="Samsung">Samsung</label>
+          <input type="radio" name="entry.832837152" id="Apple" value="Apple" />
+          <label for="Apple">Apple</label>
+          <input type="radio" name="entry.832837152" id="etc" value="기타" />
+          <label for="etc">기타..</label>
+        </div>
+
+        <h3>3. 사용중인 모델</h3>
+        <div class="model_check">
+          <select name="entry.1598663915" id="model" required>
+            <option value="" disabled selected>Model</option>
+            <optgroup label="Galaxy">
+              <option value="Galaxy S series">Galaxy S series</option>
+              <option value="Galaxy S+ series">Galaxy S+ series</option>
+              <option value="Galaxy S Ultra series">
+                Galaxy S Ultra series
+              </option>
+              <option value="Galaxy S FE series">Galaxy S FE series</option>
+              <option value="Galaxy A series">Galaxy A series</option>
+            </optgroup>
+            <optgroup label="Apple">
+              <option value="iPhone series">iPhone series</option>
+              <option value="iPhone mini series">iPhone mini series</option>
+              <option value="iPhone Max series">iPhone Max series</option>
+              <option value="iPhone Pro series">iPhone Pro series</option>
+              <option value="iPhone Pro Max series">
+                iPhone Pro Max series
+              </option>
+              <option value="iPhone SE series">iPhone SE series</option>
+            </optgroup>
+            <option value="기타">기타</option>
+          </select>
+        </div>
+
+        <h3>4. 통신사를 변경할 의향이 있나요?</h3>
+        <div class="tel_move_check">
+          <input
+            type="radio"
+            name="entry.122729517"
+            id="move_yes"
+            value="예"
+            required
+          />
+          <label for="move_yes">예</label>
+          <input
+            type="radio"
+            name="entry.122729517"
+            id="move_no"
+            value="아니오"
+          />
+          <label for="move_no">아니오</label>
+        </div>
+
+        <h3>5. 휴대전화를 교체한다면 바꾸고 싶은 모델</h3>
+        <div class="change_model_check">
+          <label for="change_model">답변: </label>
+          <input
+            type="text"
+            name="entry.1429101383"
+            id="change_model"
+            required
+          />
+        </div>
+        <hr />
+        <div class="btn_group">
+          <button type="submit" id="btn_submit">전송</button>
+          <button type="reset" id="btn_reset">초기화</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

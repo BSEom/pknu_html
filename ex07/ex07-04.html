@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #dbdbdb;
+        display: flex;
+        /* 세로 라인 중앙 */
+        justify-content: center;
+        /* 가로 라인 중앙 */
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        width: 270px;
+      }
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        border: 0;
+        border-radius: 5px;
+        background-color: slateblue;
+        color: white;
+        /* font-size: 1rem; */
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #00ffa3;
+        color: black;
+      }
+      button:nth-of-type(1) {
+        margin-top: 10px;
+      }
+      small > span {
+        position: relative;
+        left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.login-container>h2{로그인}+form>(label+input)*2+button+hr+button -->
+    <div class="login-container">
+      <h2>로그인</h2>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdjlKGYLSISGiukKs7mAyjksfn2eXih6OqLA5G2yvawwoR_DA/formResponse"
+        method="post"
+      >
+        <label for="">ID: </label>
+        <input type="text" id="id" name="entry.1880789671" required />
+        <label for="">Password: </label>
+        <input type="password" id="pw" name="entry.932385293" required /><br />
+        <small><span>회원이 아니신 분은 회원가입을 해주세요</span></small>
+        <button>로그인</button>
+        <hr />
+        <button>가입하기</button>
+      </form>
+    </div>
+  </body>
+</html>

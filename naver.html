@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #header {
+        width: 1280px;
+        margin: 0 auto;
+      }
+      .header_inner {
+        z-index: 120;
+        position: relative;
+        height: 156px;
+        padding: 52px 0 8px;
+      }
+      div {
+        display: block;
+      }
+      button,
+      a {
+        padding: 8px;
+        cursor: pointer;
+        position: relative;
+        overflow: visible;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .menu_area {
+        position: absolute;
+        width: 48px;
+        top: 5px;
+        left: -12px;
+      }
+      .pay_area {
+        position: absolute;
+        width: 48px;
+        top: 5px;
+        left: 41px;
+      }
+      .talk_area {
+        position: absolute;
+        width: 48px;
+        top: 5px;
+        right: 94px;
+      }
+      .notify_area {
+        position: absolute;
+        width: 48px;
+        top: 5px;
+        right: 42px;
+      }
+      .shopping_area {
+        position: absolute;
+        width: 48px;
+        top: 5px;
+        right: -10px;
+      }
+      .hidden {
+        position: absolute;
+        display: none;
+      }
+      #btn_menu,
+      #btn_talk,
+      #btn_notify {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        margin: auto;
+      }
+      #link_pay {
+        /* float: left; */
+        position: relative;
+        display: block;
+        padding: 8px;
+      }
+      #link_shopping {
+        /* float: right; */
+        position: relative;
+        display: block;
+        padding: 8px;
+      }
+      #btn_menu::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: url("ref/sp_main.04eb92b7.png") no-repeat;
+        background-size: 463px 442px;
+        background-position: -311px -166px;
+        position: relative;
+        display: block;
+      }
+      #btn_menu:hover {
+        background-color: #f5f3f8;
+        border-radius: 50%;
+      }
+      #link_pay::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: url("ref/sp_main.04eb92b7.png") no-repeat;
+        background-size: 463px 442px;
+        background-position: -248px -260px;
+        position: relative;
+        display: block;
+      }
+      #link_pay:hover {
+        background-color: #f5f3f8;
+        border-radius: 50%;
+      }
+      #btn_talk::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: url("ref/sp_main.04eb92b7.png") no-repeat;
+        background-size: 463px 442px;
+        background-position: -99px -316px;
+        position: relative;
+        display: block;
+      }
+      #btn_talk:hover {
+        background-color: #f5f3f8;
+        border-radius: 50%;
+      }
+      #btn_notify::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: url("ref/sp_main.04eb92b7.png") no-repeat;
+        background-size: 463px 442px;
+        background-position: -311px -232px;
+        position: relative;
+        display: block;
+      }
+      #btn_notify:hover {
+        background-color: #f5f3f8;
+        border-radius: 50%;
+      }
+      #link_shopping::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: url("ref/sp_main.04eb92b7.png") no-repeat;
+        background-size: 463px 442px;
+        background-position: -33px -316px;
+        position: relative;
+        display: block;
+      }
+      #link_shopping:hover {
+        background-color: #f5f3f8;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="header_inner">
+        <!-- 상단바 -->
+        <div class="menu_area">
+          <button id="btn_menu">
+            <span class="hidden">확장영역</span>
+          </button>
+        </div>
+        <div class="pay_area">
+          <a href="#" id="link_pay">
+            <span class="hidden"> 페이 </span>
+          </a>
+        </div>
+        <div class="talk_area">
+          <button id="btn_talk">
+            <span class="hidden">네이버톡</span>
+          </button>
+        </div>
+        <div class="notify_area">
+          <button id="btn_notify">
+            <span class="hidden">알림</span>
+          </button>
+        </div>
+        <div class="shopping_area">
+          <a href="#" id="link_shopping">
+            <span class="hidden"> 장바구니 </span>
+          </a>
+        </div>
+
+        <!-- 숏컷 -->
+        <div id="shortcut_area">
+          <ul class="shortcut_list">
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link_service">
+                <span class="service_icon"></span>
+                <span class="service_name"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

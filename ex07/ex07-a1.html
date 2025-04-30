@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --cwidth: 294px;
+        --cheight: 35px;
+      }
+      h2 {
+        background-color: darkkhaki;
+        width: var(--cwidth);
+        height: var(--cheight);
+        text-align: center;
+        color: white;
+        margin-bottom: 3px;
+      }
+      .wrapper {
+        width: var(--cwidth);
+        height: 210px;
+        text-align: center;
+        background-color: beige;
+      }
+      div.wrapper > div[class],
+      .wrapper > p:nth-of-type(-n + 4) {
+        width: 30px;
+        height: 30px;
+        border: 1px solid skyblue;
+        float: left;
+        margin: 5px;
+        font-size: 1.1rem;
+        background-color: aliceblue;
+      }
+      .wrapper > p:first-child,
+      .wrapper > p:nth-of-type(-n + 4) {
+        border-color: springgreen;
+        color: lightslategrey;
+      }
+
+      div:nth-of-type(7n-3) {
+        color: red;
+      }
+      div:nth-of-type(7n-4) {
+        color: blue;
+      }
+      .wrapper > div:nth-of-type(n + 5):nth-of-type(-n + 6) {
+        color: red;
+      }
+      .wrapper > div:nth-of-type(7n + 1):nth-of-type(-n + 15) {
+        background-color: rgb(252, 198, 223);
+      }
+      .wrapper > div:nth-of-type(n):nth-of-type(-n + 6) {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2025년 5월 달력</h2>
+    <!-- div.wrapper>p.err*5+div.box{$}*30 -->
+    <div class="wrapper">
+      <p class="err">27</p>
+      <p class="err">28</p>
+      <p class="err">29</p>
+      <p class="err">30</p>
+      <p class="err"></p>
+      <div class="bo2x">1</div>
+      <div class="box">2</div>
+      <div class="b6ox">3</div>
+      <div class="box">4</div>
+      <div class="bo3x">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box321">8</div>
+      <div class="box">9</div>
+      <div class="b3o3x">10</div>
+      <div class="b1o12x">11</div>
+      <div class="b1ox">12</div>
+      <div class="bo123x">13</div>
+      <div class="b352ox">14</div>
+      <div class="box">15</div>
+      <div class="b3254ox">16</div>
+      <div class="box">17</div>
+      <div class="bo32x">18</div>
+      <div class="box">19</div>
+      <div class="box245">20</div>
+      <div class="box">21</div>
+      <div class="box">22</div>
+      <div class="bo2345x">23</div>
+      <div class="box">24</div>
+      <div class="box">25</div>
+      <div class="box">26</div>
+      <div class="b2245ox">27</div>
+      <div class="bo87x">28</div>
+      <div class="box">29</div>
+      <div class="b7ox">30</div>
+      <div class="b7sox">31</div>
+    </div>
+  </body>
+</html>
