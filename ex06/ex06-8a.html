@@ -36,9 +36,12 @@
       <li>고객센터</li>
     </ul>
     <script>
-      const pt = document.querySelector("li");
-      pt.addEventListener("click", () => {
-        alert("누르지마라!");
+      const pt = document.querySelectorAll("li");
+
+      pt.forEach((v) => {
+        v.addEventListener("click", () => {
+          alert("누르지마라!");
+        });
       });
     </script>
   </body>
