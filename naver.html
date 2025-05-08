@@ -26,6 +26,13 @@
         overflow: visible;
         background-color: rgba(0, 0, 0, 0);
       }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        list-style: none;
+      }
       .menu_area {
         position: absolute;
         width: 48px;
@@ -150,6 +157,23 @@
         background-color: #f5f3f8;
         border-radius: 50%;
       }
+      .shortcut_list .service_icon::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: -3px;
+        background-image: url("./ref/sp_main.04eb92b7.png");
+        background-size: 463px 442px;
+        background-position: -153px -142px;
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 50px;
+      }
+      .shortcut_list {
+        display: flex;
+        flex-direction: row;
+      }
     </style>
   </head>
   <body>
@@ -188,67 +212,67 @@
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">메일</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">카페</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">블로그</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">스토어</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">뉴스</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">증권</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">부동산</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">지도</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">웹툰</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="service_name">치지직</span>
               </a>
             </li>
             <li>
               <a href="" class="link_service">
                 <span class="service_icon"></span>
-                <span class="service_name"></span>
+                <span class="blind">바로가기 펼침</span>
               </a>
             </li>
           </ul>

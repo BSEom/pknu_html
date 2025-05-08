@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        padding-top: 8rem;
+        display: flex;
+        justify-content: center;
+      }
+      .card {
+        background-color: white;
+        max-width: 300px;
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 30px;
+        overflow: hidden;
+
+        /* box-shadow: 0;
+        font: 1.5rem rgba(); */
+      }
+      .banner {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1c/CollatzFractal.png");
+        background-size: 400px;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+      }
+      .profile {
+        width: 110px;
+        height: 110px;
+        background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDAzMjNfNTUg/MDAxNTg0ODg5NDcxOTUx.0ERLbdMXsXJeTFMDZByQvwz7jhwmjsCMmux6vmAcQAQg.6ahElGYEx7SmrdQ0ZzikW7Ft6LsEIWRNIdFTXvoeZogg.JPEG.wewoori1219/IMG_4109.JPG?type=w800");
+        background-size: 130px;
+        background-position: center;
+        border-radius: 50%;
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
+        transform: translateY(50%);
+        /* position: relative;
+        top: 50px; */
+        transition: transform 0.4s ease;
+      }
+      .profile:hover {
+        transform: translateY(50%) scale(1.3);
+      }
+      .name {
+        text-align: center;
+        padding-top: 60px;
+      }
+      .follow-btn {
+        padding: 0, 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .follow-btn > button {
+        font-size: medium;
+        font-weight: bold;
+        background-color: yellow;
+        border: none;
+        padding: 10px;
+        outline: none;
+        border-radius: 40px;
+        padding-top: 12px;
+        margin: 0 25px;
+      }
+      .desc {
+        margin: 20px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.card>div.banner>div.profile^h2.name{Bosung}+div.follow-btn+div.desc{내용들...} -->
+    <div class="card">
+      <div class="banner">
+        <div class="profile"></div>
+      </div>
+      <h2 class="name">Bosung</h2>
+      <div class="follow-btn"><button>follow</button></div>
+      <div class="desc">
+        박하 맛 차는 집 앞에서 공책을 펼쳐 보며 휘파람을 불렀다.
+      </div>
+    </div>
+  </body>
+</html>

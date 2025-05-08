@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      } */
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+        animation: mymove 3s ease infinite;
+      }
+
+      @keyframes mymove {
+        /* from {
+          transform: translate(0);
+        }
+        to {
+          transform: translate(500px);
+        } */
+        0% {
+          transform: translate(0);
+        }
+        25% {
+          transform: translate(500px, 0);
+        }
+        50% {
+          transform: translate(500px, 500px);
+        }
+        75% {
+          transform: translate(0, 500px);
+        }
+        /* 25% {
+          transform: translate(500px, 0);
+        } */
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
