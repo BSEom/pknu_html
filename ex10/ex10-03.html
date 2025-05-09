@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: lightsteelblue;
+        padding: 30px;
+        margin: 0;
+      }
+      h2 {
+        text-align: center;
+      }
+      .planner {
+        /* border: 1px solid black; */
+        max-width: 500px;
+        margin: auto;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+      .hour-block {
+        display: flex;
+        border: 1px solid #ccc;
+      }
+      .time {
+        width: 80px;
+        background-color: #e6ecfa;
+        text-align: center;
+        line-height: 57px;
+        font-weight: bold;
+      }
+      .task {
+        flex-grow: 1;
+        padding: 15px;
+        background-color: white;
+      }
+      .hour-block:hover .task {
+        background-color: aliceblue;
+      }
+      .hour-block:hover .time {
+        background-color: aquamarine;
+      }
+      .hour-block:last-of-type {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- h2+div.planner>(div.hour-block>div.time{0$:00}+div.task{상세 내용})*7 -->
+    <h2>My Daily Schedule</h2>
+    <div class="planner">
+      <div class="hour-block">
+        <div class="time">01:00</div>
+        <div class="task">Lorem ipsum dolor sit amet.</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">02:00</div>
+        <div class="task">Lorem ipsum dolor sit amet consectetur.</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">03:00</div>
+        <div class="task">Lorem ipsum dolor sit amet consectetur.</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">04:00</div>
+        <div class="task">Lorem ipsum dolor sit.</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">05:00</div>
+        <div class="task">Lorem ipsum dolor sit amet consectetur.</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">06:00</div>
+        <div class="task">Lorem ipsum dolor sit amet.</div>
+      </div>
+      <div class="hour-block">
+        <div class="time">07:00</div>
+        <div class="task">
+          Lorem, ipsum dolor sit amet consectetur adipisicing.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -28,7 +28,7 @@
       input {
         display: none;
       }
-      button {
+      #btn {
         border-radius: 10px;
         width: 100px;
         background-color: coral;
@@ -37,24 +37,43 @@
         border: none;
         font-weight: bold;
         font-size: 1rem;
+        cursor: pointer;
+      }
+      #btn:disabled {
+        background-color: #bbb;
+        color: firebrick;
+        cursor: help;
       }
     </style>
   </head>
   <body>
     <!-- <form action="#">
     </form> -->
-    <input type="file" id="fileinput" />
     <label for="fileinput">+</label>
+    <input type="file" id="fileinput" />
+    <!-- multiple 가능 -->
     <button id="btn">전송</button>
     <script>
       const btn = document.querySelector("#btn");
       const inp = document.querySelector("#fileinput");
+
+      const btnAct = () => (btn.disabled = false);
+      const btnDis = () => (btn.disabled = true);
+
       inp.addEventListener("change", () => {
         console.log(inp.files[0].name, inp.files[0].size);
         if (inp.files[0].size > 3 * 1024 * 1024) {
-          alert("파일이 너무 크다.");
+          alert("파일의 용량이 3M를 초과하였습니다.");
+          btnDis();
+        } else {
+          alert("파일이 정상적으로 업로드 준비되었습니다.");
+          btnAct();
         }
       });
+
+      // btn.addEventListener("click", () => {
+      //   alert("클릭함");
+      // });
     </script>
   </body>
 </html>

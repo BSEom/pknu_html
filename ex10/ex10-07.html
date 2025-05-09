@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        background-color: royalblue;
+        color: white;
+        padding: 15px 30px;
+      }
+      .logo {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .menu a,
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+      .container {
+        display: flex;
+        height: 90vh;
+      }
+      .sidebar {
+        background-color: rgb(86, 108, 173);
+        color: white;
+        padding: 2rem;
+        display: flex;
+        flex-basis: 120px;
+        flex-direction: column;
+      }
+      .main {
+        flex: 1;
+        background-color: rgb(245, 255, 255);
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.navbar>div.logo{MySite}+div.menu>a{Home}*3 -->
+    <div class="navbar">
+      <div class="logo">MySite</div>
+      <div class="menu">
+        <a href="#">Home</a><a href="#">About</a><a href="#">Contact</a>
+      </div>
+    </div>
+    <!-- div.container>div.sidebar>h2{메뉴}+a{대시보드}*3^div.main>h1{Flex 기반 대시보드}+p{페이지 설명} -->
+    <div class="container">
+      <div class="sidebar">
+        <h2>메뉴</h2>
+        <a href="#">대시보드</a><a href="#">사용자 관리</a><a href="#">설정</a>
+      </div>
+      <div class="main">
+        <h1>Flex 기반 대시보드</h1>
+        <p>
+          Flex 기반 대시보드는 유연한 레이아웃 시스템을 활용하여 데이터를
+          직관적으로 시각화하고, 사용자에게 최적의 정보 접근성을 제공합니다.
+          다양한 디바이스와 화면 크기에 맞춰 자동으로 조정되며, 구성 요소 간
+          정렬과 배치가 자유로워 직관적인 사용자 경험을 제공합니다. 실시간
+          데이터 연동과 맞춤형 설정이 가능해 다양한 비즈니스 환경에서 활용할 수
+          있습니다.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
