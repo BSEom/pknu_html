@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        padding: 5px;
+        width: 20%;
+      }
+      th,
+      td {
+        text-align: center;
+        margin: 20px;
+      }
+      tbody {
+        background-color: rgb(218, 218, 218);
+      }
+      thead {
+        background-color: rgb(165, 165, 165);
+      }
+    </style>
+    <script>
+      const pt = +prompt("값을 입력하세요.");
+
+      p1 = pt * 0.9;
+      p2 = pt * 0.8;
+      p3 = pt * 0.7;
+
+      const list = `<table>
+      <thead>
+        <tr>
+          <th>비고</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>원가</td>
+          <td>${pt}원</td>
+        </tr>
+        <tr>
+          <td>10% 할인</td>
+          <td>${p1}원</td>
+        </tr>
+        <tr>
+          <td>20% 할인</td>
+          <td>${p2}원</td>
+        </tr>
+        <tr>
+          <td>30% 할인</td>
+          <td>${p3}원</td>
+        </tr>
+      </tbody>
+    </table>`;
+      document.write(list);
+    </script>
+  </head>
+  <body>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>비고</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>원가</td>
+          <td>pt</td>
+        </tr>
+        <tr>
+          <td>10% 할인</td>
+          <td>p1</td>
+        </tr>
+        <tr>
+          <td>20% 할인</td>
+          <td>p2</td>
+        </tr>
+        <tr>
+          <td>30% 할인</td>
+          <td>p3</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </body>
+</html>

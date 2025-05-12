@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+      }
+      th,
+      td {
+        padding: 5px 10px;
+        background-color: rgb(217, 237, 255);
+        text-align: center;
+      }
+      th {
+        color: white;
+        background-color: rgb(79, 156, 130);
+      }
+      tr:nth-of-type(2n + 1) > td {
+        background-color: beige;
+      }
+      h2 {
+        text-align: center;
+      }
+      td:nth-last-child(1) {
+        border: 2px solid #9498ff;
+        color: #735eff;
+        box-shadow: 10px 10px 20px #735eff80;
+        box-sizing: border-box;
+      }
+    </style>
+    <script>
+      const t = true;
+      const f = false;
+
+      const q1 = `<ul>
+            <li> Hello 반갑다는 뜻이야!</li>
+            <li> Javascript 로 작성되었어.</li>
+        </ul>`;
+
+      const q2 = `<table>
+      <h2>&& and</h2>
+      <tr>
+        <th>좌변</th>
+        <th>우변</th>
+        <th>결과</th>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${f}</td>
+        <td>${f && f}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${f}</td>
+        <td>${t && f}</td>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${t}</td>
+        <td>${f && t}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${t}</td>
+        <td>${t && t}</td>
+      </tr>
+    </table>
+
+    <table>
+      <h2>|| or</h2>
+      <tr>
+        <th>좌변</th>
+        <th>우변</th>
+        <th>결과</th>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${f}</td>
+        <td>${f || f}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${f}</td>
+        <td>${t || f}</td>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${t}</td>
+        <td>${f || t}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${t}</td>
+        <td>${t || t}</td>
+      </tr>
+    </table>`;
+
+      document.write(q1);
+      document.write(q2);
+    </script>
+  </head>
+  <body>
+    <!-- <table>
+      <h1>&& and</h1>
+      <tr>
+        <th>좌변</th>
+        <th>우변</th>
+        <th>결과</th>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${f}</td>
+        <td>${f && f}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${f}</td>
+        <td>${t && f}</td>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${t}</td>
+        <td>${f && t}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${t}</td>
+        <td>${t && t}</td>
+      </tr>
+    </table>
+
+    <table>
+      <h1>|| or</h1>
+      <tr>
+        <th>좌변</th>
+        <th>우변</th>
+        <th>결과</th>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${f}</td>
+        <td>${f || f}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${f}</td>
+        <td>${t || f}</td>
+      </tr>
+      <tr>
+        <td>${f}</td>
+        <td>${t}</td>
+        <td>${f || t}</td>
+      </tr>
+      <tr>
+        <td>${t}</td>
+        <td>${t}</td>
+        <td>${t || t}</td>
+      </tr>
+    </table> -->
+  </body>
+</html>
