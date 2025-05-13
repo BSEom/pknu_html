@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 250px 550px;
+
+        margin: 50px;
+        gap: 10px;
+      }
+      button {
+        position: relative;
+        border: none;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .blind {
+        display: none;
+      }
+      /* 컴퓨터 버튼 이미지 */
+      .com_img_frame {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 300px;
+        height: 240px;
+
+        border: 2px solid #9498ff;
+        border-radius: 10px;
+        box-sizing: content-box;
+        background-color: #fbfbf9;
+
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+      .moniter_area {
+        height: 160px;
+      }
+      .computer_area {
+        height: 160px;
+      }
+      .keyboard_area {
+        height: 80px;
+      }
+      .mouse_area {
+        height: 80px;
+      }
+      #moniter {
+        background: url(./img/모니터.png);
+        width: 200px;
+        height: 160px;
+        background-size: 200px 200px;
+        background-position: 0 -20px;
+        border-radius: 10px;
+      }
+      #computer {
+        background: url(./img/본체.png);
+        width: 100px;
+        height: 160px;
+        background-size: 200px 200px;
+        background-position: 145px -17px;
+        border-radius: 10px;
+      }
+      #keyboard {
+        background: url(./img/키보드.png);
+        width: 200px;
+        height: 80px;
+        background-size: 200px 200px;
+        background-position: 0 140px;
+        border-radius: 10px;
+      }
+      #mouse {
+        background: url(./img/마우스_반전.png);
+        width: 80px;
+        height: 80px;
+        background-size: 100px 100px;
+        background-position: -10px -10px;
+        border-radius: 10px;
+      }
+      .moniter_area:hover {
+        transition: transform 0.5s ease;
+        transform: scale(1.5);
+        z-index: 5;
+      }
+      .computer_area:hover {
+        transition: transform 0.5s ease;
+        transform: scale(1.5);
+        z-index: 5;
+      }
+      .keyboard_area:hover {
+        transition: transform 0.5s ease;
+        transform: scale(1.5);
+        z-index: 5;
+      }
+      .mouse_area:hover {
+        transition: transform 0.5s ease;
+        transform: scale(1.5);
+        z-index: 5;
+      }
+
+      /* 리스트 구역 */
+      .list_frame {
+        border: 2px solid #00ffa3;
+
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      /* 제품 구역 */
+      .product_frame {
+        border: 2px solid palevioletred;
+
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      .detail_frame {
+        border: 2px solid skyblue;
+
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="com_img_frame">
+      <div class="moniter_area">
+        <button id="moniter"></button>
+        <div class="blind">모니터</div>
+      </div>
+      <div class="computer_area">
+        <button id="computer"></button>
+        <div class="blind">본체</div>
+      </div>
+      <div class="keyboard_area">
+        <button id="keyboard"></button>
+        <div class="blind">키보드</div>
+      </div>
+      <div class="mouse_area">
+        <button id="mouse"></button>
+        <div class="blind">마우스</div>
+      </div>
+    </div>
+
+    <div class="product_frame">
+      <div>임시 제품 화면</div>
+    </div>
+
+    <div class="detail_frame">
+      <div>임시 상세 화면</div>
+    </div>
+
+    <div class="list_frame">
+      <div>임시 리스트 화면</div>
+    </div>
+  </body>
+</html>

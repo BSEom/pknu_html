@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main_frame {
+        display: flex;
+        flex-direction: row;
+        /* width: 100%; */
+      }
+      .main_frame > table {
+        border: 1px solid black;
+        width: 100%;
+      }
+      tr.color {
+      }
+      tr.color > td {
+        width: 15px;
+        height: 26px;
+        border: 1px solid black;
+      }
+      .temp {
+        text-align: center;
+        width: 100%;
+      }
+      /* td {
+        width: 100%;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="main_frame">
+      <table id="cold">
+        <tr>
+          <td class="temp">16미만</td>
+        </tr>
+        <tr class="color">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="comment"></td>
+        </tr>
+      </table>
+      <table id="cool">
+        <tr>
+          <td class="temp">16이상~22미만</td>
+        </tr>
+        <tr class="color">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="comment"></td>
+        </tr>
+      </table>
+      <table id="normal">
+        <tr>
+          <td class="temp">22이상~28미만</td>
+        </tr>
+        <tr class="color">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="comment"></td>
+        </tr>
+      </table>
+      <table id="warm">
+        <tr>
+          <td class="temp">28이상~32미만</td>
+        </tr>
+        <tr class="color">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="comment"></td>
+        </tr>
+      </table>
+      <table id="hot">
+        <tr>
+          <td class="temp">32이상</td>
+        </tr>
+        <tr class="color">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="comment"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
