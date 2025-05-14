@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+      div {
+        padding: 0;
+        margin: 0;
+        background: url("https://i.namu.wiki/i/GZccVt9oyRvjSfmUIz15-ywCdiYNalM5toPifVmEw9G5GnR4bM92qN6eT3FQLr0GW66yhAaLL18LZZ7m-NcFSFWitJW7rJ22nz2p2q0R03EYie8dLzcq454oiHbXNTbqH8T2_zveAVruJ8KsVdUuwg.webp");
+        width: 120px;
+        height: 120px;
+      }
+      .zzi {
+        background-size: 360px 120px;
+        background-position: -20px 10px;
+      }
+      .muk {
+        background-size: 390px 190px;
+        background-position: -134px -30px;
+      }
+      .bba {
+        background-size: 360px 120px;
+        background-position: -220px -5px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const now = dayjs();
+      const random = now.get("ms") % 3;
+      console.log(random);
+
+      if (random == 0) {
+        document.body.innerHTML = `<div class="muk"></div>`;
+      } else if (random == 1) {
+        document.body.innerHTML = `<div class="zzi"></div>`;
+      } else {
+        document.body.innerHTML = `<div class="bba"></div>`;
+      }
+    </script>
+  </body>
+</html>

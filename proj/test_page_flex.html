@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="st.css" />
+  </head>
+  <body>
+    <div class="left_frame">
+      <div class="com_img_frame">
+        <div class="moniter_area">
+          <button id="moniter"></button>
+          <div class="blind">모니터</div>
+        </div>
+        <div class="computer_area">
+          <button id="computer"></button>
+          <div class="blind">본체</div>
+        </div>
+        <div class="keyboard_area">
+          <button id="keyboard"></button>
+          <div class="blind">키보드</div>
+        </div>
+        <div class="mouse_area">
+          <button id="mouse"></button>
+          <div class="blind">마우스</div>
+        </div>
+      </div>
+
+      <div class="list_frame">
+        <div>임시 리스트 화면</div>
+      </div>
+    </div>
+
+    <div class="product_frame">
+      <div class="sort_select">
+        <form action="#">임시표</form>
+      </div>
+      <div>임시 제품 화면</div>
+      <!-- (div#prod$>button+span)*20 -->
+      <div id="prod1"><button></button><span>Prod 1</span></div>
+      <div id="prod2"><button></button><span>Prod 2</span></div>
+      <div id="prod3"><button></button><span>Prod 3</span></div>
+      <div id="prod4"><button></button><span>Prod 4</span></div>
+      <div id="prod5"><button></button><span>Prod 5</span></div>
+      <div id="prod6"><button></button><span>Prod 6</span></div>
+      <div id="prod7"><button></button><span>Prod 7</span></div>
+      <div id="prod8"><button></button><span>Prod 8</span></div>
+      <div id="prod9"><button></button><span>Prod 9</span></div>
+      <div id="prod10"><button></button><span>Prod 10</span></div>
+      <div id="prod11"><button></button><span>Prod 11</span></div>
+      <div id="prod12"><button></button><span>Prod 12</span></div>
+      <div id="prod13"><button></button><span>Prod 13</span></div>
+      <div id="prod14"><button></button><span>Prod 14</span></div>
+      <div id="prod15"><button></button><span>Prod 15</span></div>
+      <div id="prod16"><button></button><span>Prod 16</span></div>
+      <div id="prod17"><button></button><span>Prod 17</span></div>
+      <div id="prod18"><button></button><span>Prod 18</span></div>
+      <div id="prod19"><button></button><span>Prod 19</span></div>
+      <div id="prod20"><button></button><span>Prod 20</span></div>
+    </div>
+
+    <div class="detail_frame">
+      <div>임시 상세 화면</div>
+      <div class="prod_title">
+        <div id="prod_img"></div>
+        <div id="prod_name">이름 아무거나</div>
+      </div>
+      <div class="detail_window">상세 정보</div>
+    </div>
+  </body>
+  <script>
+    // 이미지 변경 스크립트 예제
+    document.getElementById("prod1").addEventListener("click", () => {
+      document.getElementById("prod_img").style.backgroundImage =
+        "url('./img/intel_test.jpg')";
+      document.getElementById("prod_name").innerText = "인텔 CPU";
+    });
+    document.getElementById("prod2").addEventListener("click", () => {
+      document.getElementById("prod_img").style.backgroundImage =
+        "url('./img/ryzen_test.png')";
+      document.getElementById("prod_name").innerText = "AMD CPU";
+    });
+  </script>
+</html>

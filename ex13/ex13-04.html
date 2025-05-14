@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      table {
+        border-collapse: collapse;
+        border: 1px solid blue;
+        margin: 10px;
+      }
+
+      td {
+        padding: 7px;
+        text-align: center;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const num = +prompt("한줄에 몇명이 앉을건가요?");
+      const total = +prompt("총 인원은 몇명인가요?");
+
+      let html = `<h1>자리배치도</h1>
+      <table>`;
+
+      let row = Math.floor(total / num);
+
+      if (total % num != 0) {
+        row += 1;
+      }
+
+      if (Number.isNaN(row) || num == 0) {
+        html = "<h1>잘못된 입력</h1>";
+      }
+
+      let n = 0;
+
+      for (let i = 0; i < row; i++) {
+        html += `<tr>`;
+
+        for (let j = 0; j < num; j++) {
+          html += `<td>좌석${n + 1}</td>`;
+          ++n;
+
+          if (n == total) {
+            break;
+          }
+        }
+
+        html += `</tr>`;
+      }
+
+      html += `</table>`;
+      document.body.innerHTML = html;
+    </script>
+  </body>
+</html>
