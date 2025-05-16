@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const num = +prompt("몇 층?");
+      let star = "";
+
+      let count = num + 1;
+
+      console.log(count);
+
+      for (let i = 1; i < num + 1; i++) {
+        for (let j = 1; j <= count - 1; j++) {
+          star += " ";
+        }
+
+        for (let j = 0; j < i * 2 - 1; j++) {
+          star += "*";
+        }
+
+        count--;
+        star += "\n";
+      }
+
+      console.log(count);
+
+      let cnt = num - 1;
+
+      for (let i = 1; i < num + 1; i++) {
+        for (let j = 0; j < i + 1; j++) {
+          star += " ";
+        }
+
+        for (let c = 0; c < cnt * 2 - 1; c++) {
+          star += "*";
+        }
+        cnt--;
+        star += "\n";
+      }
+
+      console.log(star);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ran = Math.floor(Math.random() * 100);
+      let list = "";
+      if (ran <= 3) {
+        list += `<h1>3% 확률로 유니크 아이템 출연</h1>`;
+      } else if (3 < ran && ran <= 10) {
+        list += `<h1>10% 확률로 레어 아이템 출연</h1>`;
+      } else if (10 < ran && ran <= 40) {
+        list += `<h1>40% 확률로 매직 아이템 출연</h1>`;
+      } else {
+        list += `<h1>일반 아이템 출연</h1>`;
+      }
+
+      list += `<hr> 랜덤값은 ${ran} 입니다.`;
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>
