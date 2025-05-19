@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호이스트</title>
+    <script>
+      /* 함수 호이스팅 */
+      let bb = "test";
+      console.log(bb);
+      abc();
+
+      function abc() {
+        // 함수는 해석시 최상위로 로드
+        console.log(bb);
+        bb = "나는 밤양갱";
+      }
+
+      abc();
+      console.log(bb);
+
+      /* 변수 호이스팅 */
+
+      var num; // undefined
+
+      console.log(num);
+      var num = 256;
+      console.log(num);
+
+      console.log(asd);
+      var asd = 123;
+    </script>
+  </head>
+  <body></body>
+</html>
