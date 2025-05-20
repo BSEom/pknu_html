@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- h1#count{글자수:0} -->
+    <h1 id="count">글자수:0</h1>
+    <textarea
+      name=""
+      id="txtarea"
+      cols="20"
+      rows="10"
+      maxlength="200"
+      placeholder="100자 이하"
+    ></textarea>
+
+    <button id="ok">확인</button>
+    <button id="reset" type="reset">초기화</button>
+  </body>
+
+  <script>
+    const textArea = document.querySelector("textarea");
+    const count = document.querySelector("#count");
+    const btnR = document.querySelector("#reset");
+    const btnO = document.querySelector("#ok");
+
+    const updateText = () => {
+      count.textContent = `글자수 : ${textArea.value.length}`;
+    };
+
+    const openAlert = () => {
+      if (textArea.value.length > 100) {
+        alert("100자 넘었습니다.");
+        textArea.disabled = true;
+      }
+    };
+
+    const btnOk = () => {
+      textArea.disabled = false;
+    };
+
+    const btnReset = () => {
+      textArea.disabled = false;
+      textArea.value = "";
+      updateText();
+    };
+
+    textArea.addEventListener("keyup", updateText);
+    textArea.addEventListener("input", openAlert);
+    btnR.addEventListener("click", btnReset);
+    btnO.addEventListener("click", btnOk);
+  </script>
+</html>
