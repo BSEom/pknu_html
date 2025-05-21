@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   setInterval; // 시간 반복
+      //   setTimeout;  // 일정 시간뒤 실행
+
+      function pt(name = "없어") {
+        console.log(name + "안녕?");
+      }
+
+      /* 바로 실행됨 */
+      //   setTimeout(pt("홍길동"), 1000);
+      //   setTimeout(pt("홍"), 2000);
+      //   setTimeout(pt("길동"), 3000);
+
+      setTimeout(function () {
+        pt("홍길동");
+      }, 1000);
+
+      setTimeout(() => pt("홍"), 2000);
+
+      setTimeout(pt, 3000);
+
+      setTimeout(pt("길동"), 4000);
+
+      // py import time
+      // print("안녕")
+      // time.sleep(1000)
+      // print("또 안녕")
+    </script>
+  </head>
+  <body>
+    <h1>저는 곧 변합니다.</h1>
+    <script>
+      /* 방식1 */
+      setTimeout(() => {
+        const h1 = document.querySelector("h1");
+        h1.textContent = "변했어요";
+      }, 2000);
+
+      /* 방식2 */
+      setTimeout(
+        () => (document.querySelector("h1").textContent = "또 변했어요"),
+        4000
+      );
+
+      /* 방식3 */
+      const cg = () => {
+        const h1 = document.querySelector("h1");
+        h1.textContent = "또또 변한다";
+      };
+
+      setTimeout(cg, 6000);
+
+      /* 방식4 - 인자 넣기 */
+      const cc = (text) => {
+        const h1 = document.querySelector("h1");
+        h1.textContent = text;
+      };
+
+      setTimeout(() => cc("우와"), 7000);
+      setTimeout(() => cc("드디어"), 8000);
+      setTimeout(() => cc("변했다"), 9000);
+
+      /* 방식5 - 인자 넣기 */ // 개인 선호
+      setTimeout(cc, 10000, "ㅋㅋㅋㅋ");
+      setTimeout(cc, 11000, "또");
+      setTimeout(cc, 12000, "다시 변함");
+    </script>
+  </body>
+</html>
