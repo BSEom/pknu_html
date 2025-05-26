@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+
+        position: relative;
+      }
+
+      .score {
+        margin-left: 20px;
+      }
+
+      .pacman {
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        border-radius: 50%;
+        font-size: 3rem;
+        position: absolute;
+
+        transform: translate(400px, 400px);
+        user-select: none;
+      }
+
+      .item {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+        border-radius: 50%;
+        position: absolute;
+        user-select: none;
+      }
+    </style>
+    <script>
+      let status = false;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const pac = document.createElement("img");
+        pac.classList.add("pacman");
+
+        const item = document.createElement("img");
+        item.classList.add("item");
+
+        document.body.appendChild(pac);
+        document.body.appendChild(item);
+
+        let x = (y = a = n = 0);
+        let lef = false;
+
+        const step = 40;
+
+        const score = document.createElement("h1");
+        score.classList.add("score");
+        score.textContent = "점수: 0";
+        document.body.appendChild(score);
+
+        setInterval(() => {
+          if (status) {
+            pac.src = "../ref/pac_open.png";
+            item.src = "../ref/item_dark.png";
+          } else {
+            pac.src = "../ref/pac_close.png";
+            item.src = "../ref/item_light.png";
+          }
+          status = !status;
+        }, 200);
+
+        const itemSet = () => {
+          item.style.transform = `translate(${
+            Math.floor(Math.random() * 100) * 8
+          }px, ${Math.floor(Math.random() * 100) * 8}px)`;
+        };
+
+        const wight = (i, j) => {
+          return Math.abs(i - j);
+        };
+
+        const move = (lef) => {
+          const pacPos = pac.getBoundingClientRect();
+          const itemPos = item.getBoundingClientRect();
+
+          const pacX_R = pacPos.left + pacPos.width;
+          const pacX_L = pacPos.left;
+          const pacY = pacPos.top + pacPos.height / 2;
+
+          const itemX = itemPos.left + itemPos.width / 2;
+          const itemY = itemPos.top + itemPos.height / 2;
+
+          pac.style.left = `${x * step}px`;
+          pac.style.top = `${y * step}px`;
+
+          if (lef === true) {
+            pac.style.transform = `translate(400px, 400px) scaleX(-1)`;
+            // console.log(lef);
+            console.log("pac: ", pacPos.left, pacX_L, pacY);
+            console.log("item:", itemX, itemY);
+            if (wight(pacX_L, itemX) <= 25 && wight(pacY, itemY) <= 40) {
+              itemSet();
+              ++n;
+              console.log("n: ", n);
+              score.textContent = `점수: ${n}`;
+            }
+          } else {
+            pac.style.transform = `translate(scaleX(1)) `;
+            pac.style.transform = `translate(400px, 400px) rotate(${a}deg)`;
+            // console.log(lef);
+            console.log("pac: ", pacPos.left, pacX_R, pacY);
+            console.log("item:", itemX, itemY);
+            if (wight(pacX_R, itemX) <= 25 && wight(pacY, itemY) <= 40) {
+              itemSet();
+              ++n;
+              console.log("n: ", n);
+              score.textContent = `점수: ${n}`;
+            }
+          }
+        };
+
+        itemSet();
+        setInterval(() => {
+          itemSet();
+        }, 10000);
+
+        window.addEventListener("keydown", (event) => {
+          lef = false;
+          if (event.key == "ArrowLeft") (x -= 1), (a = 180), (lef = true);
+          if (event.key == "ArrowRight") (x += 1), (a = 0);
+          if (event.key == "ArrowUp") (y -= 1), (a = 270);
+          if (event.key == "ArrowDown") (y += 1), (a = 90);
+          // console.log(event.key);
+          move(lef);
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
