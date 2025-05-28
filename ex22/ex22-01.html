@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script src="<https://unpkg.com/typeit@8.8.7/dist/index.umd.js>"></script> -->
+
+    <h1 id="myElement"></h1>
+
+    <!-- The script itself, loaded AFTER your root element. -->
+    <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new TypeIt("#myElement", {
+          // strings: "This is what will be typed!",
+          speed: 50,
+          startDelay: 1000,
+        })
+          .type("제 홈페이지에 오신것을 환영합니다.", { delay: 100 })
+          .move(-17, { delay: 100 })
+          .type("포트폴리오 ", { delay: 100 })
+          .go();
+      });
+    </script>
+  </body>
+</html>

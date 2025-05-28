@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+      }
+      .chart_frame {
+        width: 1020px;
+        height: 550px;
+
+        /* position: relative; */
+      }
+
+      .chart {
+        width: 1000px;
+        height: 500px;
+      }
+
+      .lotto_frame {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+        margin-left: 30px;
+
+        width: 800px;
+        position: relative;
+      }
+
+      #pick {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+      }
+      #sort_btn {
+        float: right;
+        margin-right: 20px;
+        /* margin-top: 209; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chart_frame">
+      <button id="sort_btn">정렬 전환</button>
+      <div class="chart">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <div class="lotto_frame">
+      <button id="pick">번호 추천</button>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    let lotto;
+
+    async function load() {
+      const res = await fetch("./ref/lotto.json");
+      const data = await res.json();
+      return data;
+    }
+
+    function getColor(key) {
+      if (key > 40) return "rgba(173, 255, 47, 0.6)";
+      if (key > 30) return "rgba(211, 211, 211, 0.6)";
+      if (key > 20) return "rgba(240, 128, 128, 0.6)";
+      if (key > 10) return "rgba(173, 216, 230, 0.6)";
+      return "rgba(255, 255, 0, 0.6)";
+    }
+
+    function getBorder(key) {
+      if (key > 40) return "rgba(173, 255, 47)";
+      if (key > 30) return "rgba(211, 211, 211)";
+      if (key > 20) return "rgba(240, 128, 128)";
+      if (key > 10) return "rgba(173, 216, 230)";
+      return "rgba(255, 255, 0)";
+    }
+
+    function nonSorted(lotto) {
+      const labels = Object.keys(lotto);
+      const values = Object.values(lotto);
+      const colors = labels.map((key) => getColor(Number(key)));
+      const borders = labels.map((key) => getBorder(Number(key)));
+
+      // console.log(colors);
+      const ctx = document.getElementById("myChart");
+      const non_sort_bar = {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "누적 수",
+              data: values,
+              backgroundColor: colors,
+              borderColor: borders,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      nsChart = new Chart(ctx, non_sort_bar);
+    }
+
+    function sorted(lotto) {
+      const sortedEtries = Object.entries(lotto).sort((x, y) => y[1] - x[1]);
+      const sortedLotto = new Map(sortedEtries);
+
+      // console.log(sortedEtries);
+      // console.log(sortedLotto);
+      const labels = [...sortedLotto.keys()];
+      const values = [...sortedLotto.values()];
+      const colors = labels.map((key) => getColor(Number(key)));
+      const borders = labels.map((key) => getBorder(Number(key)));
+
+      // console.log(colors);
+      const ctx = document.getElementById("myChart");
+      const non_sort_bar = {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "누적 수",
+              data: values,
+              backgroundColor: colors,
+              borderColor: borders,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      sChart = new Chart(ctx, non_sort_bar);
+    }
+
+    function pick(lotto) {
+      const sortedEtries = Object.entries(lotto).sort((x, y) => y[1] - x[1]);
+      const sortedLotto = new Map(sortedEtries);
+
+      const labels = [...sortedLotto.keys()];
+
+      let luckNums = [];
+      let numList = Array.from({ length: 45 }, (_, i) => i + 1);
+
+      for (let i = 0; i < 8; i++) {
+        luckNums.push(labels[i]);
+      }
+      console.log(numList);
+      console.log(luckNums);
+    }
+
+    async function init() {
+      lotto = await load();
+      console.log(lotto);
+      nonSorted(lotto);
+      pick(lotto);
+      // sorted(lotto);
+
+      let sort_state = false;
+      const sortButton = document.getElementById("sort_btn");
+
+      sortButton.addEventListener("click", () => {
+        console.log(sort_state);
+        if (sort_state == false) {
+          nsChart.destroy();
+          sorted(lotto);
+          sort_state = true;
+          console.log("정렬후", sort_state);
+        } else if (sort_state == true) {
+          sChart.destroy();
+          nonSorted(lotto);
+          sort_state = false;
+          console.log("정렬 해제", sort_state);
+        }
+      });
+    }
+
+    init();
+  </script>
+</html>

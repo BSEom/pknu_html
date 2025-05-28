@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        text-align: center;
+        margin: 20px;
+
+        gap: 20px;
+      }
+      .clock {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: steelblue;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+
+        margin: auto;
+        position: relative;
+      }
+      #time_disp {
+        margin-bottom: 20px;
+      }
+
+      #ms {
+        width: 5px;
+        height: 180px;
+        background-color: yellow;
+        border-radius: 20px;
+        position: absolute;
+
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        transform-origin: 50% 100%;
+        transition: 0.1s ease;
+
+        z-index: 5;
+      }
+      #ss {
+        width: 10px;
+        height: 150px;
+        background-color: slateblue;
+        border-radius: 20px;
+        position: absolute;
+
+        top: 40px;
+        /* 가운데 두기 한쌍 */
+        left: 50%;
+        transform: translate(-50%);
+        transform-origin: 50% 100%;
+        transition: 0.01s ease;
+      }
+      button {
+        cursor: pointer;
+      }
+      #rec-disp {
+        text-align: center;
+        margin-top: 20px;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      <div id="time_disp">0 min 0 sec 000 msec</div>
+      <button id="start" onclick="start()">시작버튼</button>
+      <button id="rec" onclick="recode()">기록버튼</button>
+      <button id="stop" onclick="end()" disabled>정지버튼</button>
+      <button id="reset" onclick="reset()" disabled>리셋버튼</button>
+    </div>
+
+    <div class="clock">
+      <div id="ms"></div>
+      <div id="ss"></div>
+    </div>
+
+    <div id="rec-disp">[기록]</div>
+
+    <script>
+      let s_sec = (id = end_sec = msec = min = sec = s = m = 0);
+
+      let sp = (sec_rod = msec_rod = 0);
+
+      const ms = document.getElementById("ms");
+      const ss = document.getElementById("ss");
+      const recDisp = document.getElementById("rec-disp");
+
+      function st() {
+        id = setTimeout(() => {
+          end_sec += 1;
+          msec = end_sec % 100;
+          sec_ = parseInt(end_sec / 100);
+          sec = sec_ % 60;
+          min = parseInt(sec_ / 100);
+
+          document.getElementById(
+            "time_disp"
+          ).innerHTML = `${min} min ${sec} sec ${msec}0 msec`;
+          st();
+        }, 10);
+      }
+
+      function hands() {
+        sp = setInterval(() => {
+          sec_rod += 0.6;
+          msec_rod += 36;
+
+          ss.style.transform = `translate(-50%) rotate(${sec_rod}deg)`;
+          ms.style.transform = `translate(-50%) rotate(${msec_rod}deg)`;
+
+          //   if (sec_rod == 60) sec_rod = 0;
+          //   if (msec_rod == 360) msec_rod = 0;
+        }, 100);
+      }
+
+      function init() {
+        sec_rod = 0;
+        min_rod = 0;
+        document.getElementById("ss").style.transform = `translate(-50%)`;
+        document.getElementById("ms").style.transform = `translate(-50%)`;
+      }
+
+      function start() {
+        st();
+        hands();
+        document.getElementById("start").setAttribute("disabled", "True");
+        document.getElementById("stop").removeAttribute("disabled");
+        document.getElementById("reset").removeAttribute("disabled");
+      }
+
+      function recode() {
+        const li = document.createElement("li");
+        li.innerHTML = `${min} min ${sec} sec ${msec}0 msec`;
+        recDisp.appendChild(li);
+      }
+
+      function end() {
+        clearTimeout(id);
+        clearInterval(sp);
+        document.getElementById("start").removeAttribute("disabled");
+        console.log("타이머 종료");
+      }
+
+      function reset() {
+        clearTimeout(id);
+        clearInterval(sp);
+        init();
+        s_sec = end_sec = msec = sec = min = 0;
+        document.getElementById("time_disp").innerHTML = `0 min 0 sec 000 msec`;
+        document.getElementById("start").removeAttribute("disabled");
+
+        recDisp.textContent = "[기록]";
+
+        // const liAll = recDisp.querySelectorAll("li");
+        // liAll.forEach((li) => {
+        //   li.remove();
+        // });
+      }
+    </script>
+  </body>
+</html>

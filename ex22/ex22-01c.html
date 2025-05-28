@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      const books = [
+        {
+          title: "자바스크립트 완벽 가이드",
+          author: "David Flanagan",
+          price: 38000,
+        },
+        {
+          title: "클린 코드",
+          author: "Robert C. Martin",
+          price: 32000,
+        },
+        {
+          title: "프로그래밍 경험의 요소",
+          author: "John Ousterhout",
+          price: 29000,
+        },
+        {
+          title: "리팩토링",
+          author: "Martin Fowler",
+          price: 35000,
+        },
+      ];
+
+      const output = _.sortBy(books, (book) => book.price);
+      console.log(JSON.stringify(output, null, 2));
+    </script>
+  </body>
+</html>
