@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        color: white;
+        text-align: center;
+        padding: 50px;
+      }
+
+      #about {
+        background-color: tomato;
+      }
+      #products {
+        background-color: green;
+        display: none;
+      }
+      #technology {
+        background-color: royalblue;
+        display: none;
+      }
+      #downloads {
+        background-color: goldenrod;
+        display: none;
+      }
+      #etc {
+        background-color: violet;
+        display: none;
+      }
+      .tab {
+        float: left;
+        background-color: lightslategrey;
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 14px 16px;
+        font-size: 1.1rem;
+        width: 20%;
+      }
+      .tab:nth-of-type(1) {
+        background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="about" class="content">
+      <h1>About</h1>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <div id="products" class="content">
+      <h1>Products</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis?</p>
+    </div>
+    <div id="technology" class="content">
+      <h1>Technology</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div id="downloads" class="content">
+      <h1>Downloads</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam,
+        doloribus!
+      </p>
+    </div>
+    <div id="etc" class="content">
+      <h1>Etc</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis?</p>
+    </div>
+
+    <div class="teb-container">
+      <button class="tab" onclick="openMenu('about', this, 'tomato')">
+        About
+      </button>
+      <button class="tab" onclick="openMenu('products', this, 'green')">
+        Products
+      </button>
+      <button class="tab" onclick="openMenu('technology', this, 'royalblue')">
+        Technology
+      </button>
+      <button class="tab" onclick="openMenu('downloads', this, 'goldenrod')">
+        Downloads
+      </button>
+      <button class="tab" onclick="openMenu('etc',this,'violet')">Etc</button>
+    </div>
+
+    <script>
+      const contents = document.querySelectorAll(".content");
+      const tabs = document.querySelectorAll(".tab");
+
+      const openMenu = (targetId, currentBtn, color) => {
+        contents.forEach((v) => {
+          v.style.display = "none";
+        });
+        tabs.forEach((v) => {
+          v.style.backgroundColor = "lightslategrey";
+        });
+        document.getElementById(targetId).style.display = "block";
+        currentBtn.style.backgroundColor = color;
+      };
+
+      //   window.onload = () => tabs[0].click();
+    </script>
+  </body>
+</html>

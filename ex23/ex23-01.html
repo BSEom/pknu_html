@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 390vh;
+      }
+      section {
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        color: burlywood;
+      }
+      section:nth-of-type(odd) {
+        background-color: beige;
+      }
+      section:nth-of-type(even) {
+        background-color: rgba(100, 148, 237, 0.664);
+      }
+      .scroll-text {
+        position: fixed;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.8rem;
+        font-weight: bold;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        border-radius: 20px;
+      }
+      .left-menu,
+      .right-menu {
+        height: 250px;
+        color: white;
+        padding: 20px;
+        position: fixed;
+        top: 100px;
+        border-radius: 10px;
+
+        opacity: 0;
+        transition: 0.5s ease;
+      }
+      .left-menu {
+        left: -200px;
+        width: 150px;
+        background-color: cadetblue;
+      }
+      .right-menu {
+        right: -200px;
+        width: 250px;
+        background-color: darkgoldenrod;
+      }
+      .end-line {
+        display: flex;
+        justify-content: center;
+      }
+      .end-menu {
+        position: fixed;
+        top: 90%;
+
+        color: white;
+        background-color: lightpink;
+        padding: 20px;
+        width: 22%;
+        height: 50px;
+        border-radius: 10px;
+        text-align: center;
+        opacity: 0;
+        transition: 0.5s ease;
+
+        font-size: 2rem;
+      }
+      .show-end {
+        opacity: 1;
+        width: 100%;
+      }
+      .show-left {
+        left: 10px;
+        opacity: 1;
+      }
+      .show-right {
+        right: 10px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-text" id="scrollText">
+      처음이에요. 스크롤을 내려보세요.
+    </div>
+
+    <div class="left-menu" id="leftMenu">
+      왼쪽메뉴
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <div class="right-menu" id="rightMenu">
+      오른쪽메뉴
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <div class="end-line">
+      <div class="end-menu" id="endMenu">감사합니다</div>
+    </div>
+
+    <section>1단계</section>
+    <section>2단계</section>
+    <section>3단계</section>
+    <section>4단계</section>
+    <section>end</section>
+
+    <script>
+      const scrollText = document.getElementById("scrollText");
+      const leftMenu = document.getElementById("leftMenu");
+      const rightMenu = document.getElementById("rightMenu");
+      const endMenu = document.getElementById("endMenu");
+      let once = false;
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        console.log(scrollY);
+        /* 스크롤 위치에 따른 텍스트를 변경 */
+        if (scrollY < 900) {
+          scrollText.textContent = "아래로 스크롤을 내려보세요.";
+        } else if (scrollY < 1700) {
+          scrollText.textContent = "지금은 2단계 입니다.";
+        } else if (scrollY < 2500) {
+          scrollText.textContent = "지금은 3단계 입니다.";
+        } else if (scrollY < 3200) {
+          scrollText.textContent = "지금은 4단계 입니다.";
+        } else if (scrollY < 3700) {
+          scrollText.textContent = "마지막 구간이에요.";
+        }
+
+        if (scrollY > 500 && scrollY < 1800) {
+          leftMenu.classList.add("show-left");
+        } else {
+          leftMenu.classList.remove("show-left");
+        }
+
+        if (scrollY > 1400 && scrollY < 2600) {
+          rightMenu.classList.add("show-right");
+        } else {
+          rightMenu.classList.remove("show-right");
+        }
+
+        const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+        if (scrollY > 3400 && !once) {
+          once = true;
+          endMenu.classList.add("show-end");
+          setTimeout(toTop, 2000);
+        } else if (scrollY <= 2800) {
+          once = false;
+          endMenu.classList.remove("show-end");
+        }
+      });
+    </script>
+  </body>
+</html>
