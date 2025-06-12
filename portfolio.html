@@ -103,14 +103,14 @@
       #profile {
         width: 600px;
         height: 450px;
-        background-color: white;
+        background-color: #fbfbf8;
         border-radius: 30px;
         box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
       }
       #desc {
         width: 300px;
         height: 450px;
-        background-color: white;
+        background-color: #fbfbf8;
         border-radius: 30px;
         box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
       }
@@ -118,7 +118,7 @@
         width: 930px;
         height: 240px;
         padding: 25px;
-        background-color: white;
+        background-color: #fbfbf8;
         border-radius: 30px;
         box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
         box-sizing: border-box;
@@ -144,15 +144,21 @@
         width: 70px;
         height: 25px;
         text-align: center;
-        line-height: 125%;
-        /* border: 1px solid black; */
+        line-height: 175%;
         border-radius: 30px;
+        font-size: small;
 
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
 
-        background-color: #7431f9;
+        background-color: #ff4f00; /* #7431f9 */
         color: white;
+
+        transition: 0.3s ease;
       }
+      .stack:hover {
+        transform: scale(1.3);
+      }
+
       .stack_frame {
         width: 100%;
         display: flex;
@@ -186,7 +192,7 @@
 
     <section class="sec1">
       <h1>간단한 소개 및 적당한 배경이미지</h1>
-      <button id="down_scroll">아래로</button>
+      <button id="down_scroll">더 알아보기</button>
     </section>
 
     <section class="sec2">
@@ -197,18 +203,56 @@
     <section class="sec3">
       <div id="etc">
         <div class="stack_frame">
-          <div id="html_stack" class="stack">html</div>
-          <div id="java_stack" class="stack">java</div>
-          <div id="" class="stack">spring</div>
-          <div id="" class="stack">css</div>
-          <div id="" class="stack">js</div>
-          <div id="" class="stack">c</div>
+          <button
+            id="html_stack"
+            class="stack"
+            onclick="stackClick('html_desc', this)"
+          >
+            html
+          </button>
+          <button
+            id="java_stack"
+            class="stack"
+            onclick="stackClick('java_desc', this)"
+          >
+            java
+          </button>
+          <button
+            id="spring_stack"
+            class="stack"
+            onclick="stackClick('spring_desc', this)"
+          >
+            spring
+          </button>
+          <button
+            id="css_stack"
+            class="stack"
+            onclick="stackClick('css_desc', this)"
+          >
+            css
+          </button>
+          <button
+            id="js_stack"
+            class="stack"
+            onclick="stackClick('js_desc', this)"
+          >
+            js
+          </button>
+          <button
+            id="c_stack"
+            class="stack"
+            onclick="stackClick('c_desc', this)"
+          >
+            c
+          </button>
         </div>
         <div class="stack_desc_frame">
-          <div id="html_desc" class="stack_desc">html 설명</div>
+          <div id="html_desc" class="stack_desc hidden">html 설명</div>
           <div id="java_desc" class="stack_desc hidden">java 설명</div>
-          <div id="_desc" class="stack_desc hidden"></div>
-          <div id="_desc" class="stack_desc hidden"></div>
+          <div id="spring_desc" class="stack_desc hidden">spring 설명</div>
+          <div id="css_desc" class="stack_desc hidden">css 설명</div>
+          <div id="js_desc" class="stack_desc hidden">js 설명</div>
+          <div id="c_desc" class="stack_desc hidden">c 설명</div>
         </div>
       </div>
     </section>
@@ -222,13 +266,13 @@
     const header = document.getElementById("header");
     const down_scroll_btn = document.getElementById("down_scroll");
 
-    const html_stack = document.getElementById("html_stack");
-    const java_stack = document.getElementById("java_stack");
+    const stack = document.querySelectorAll(".stack");
+    const stack_desc = document.querySelectorAll(".stack_desc");
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
 
-      console.log(scrollY);
+      // console.log(scrollY);
 
       if (scrollY >= 100) {
         header.classList.add("header_scroll");
@@ -244,8 +288,15 @@
       });
     });
 
-    html_stack.addEventListener("click", () => {
-      html_stack.classList.remove("hidden");
-    });
+    const stackClick = (targetId, curStack) => {
+      stack.forEach((v) => {
+        v.style.transform = "";
+      });
+      stack_desc.forEach((v) => {
+        v.classList.add("hidden");
+      });
+      document.getElementById(targetId).classList.remove("hidden");
+      curStack.style.transform = "scale(1.3)";
+    };
   </script>
 </html>

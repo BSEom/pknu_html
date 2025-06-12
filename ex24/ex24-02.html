@@ -88,6 +88,7 @@
         background-color: aliceblue;
         padding: 0.7rem 1rem;
         word-break: break-word;
+        white-space: pre-line; /* 줄바꿈, 공백 유지 */
       }
       .name {
         font-size: 0.8rem;
@@ -99,6 +100,7 @@
       }
       .user .name {
         text-align: right;
+        /* line-height: 175%; */
       }
       .chat-container::-webkit-scrollbar {
         background: #e0dfdf;
@@ -112,6 +114,45 @@
         background: #95bb0d;
         border-radius: 6px;
       }
+      .user .profile-img {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        background-image: url("https://e7.pngegg.com/pngimages/26/210/png-clipart-dogecoin-shiba-inu-scrypt-cryptocurrency-ethereum-coin-mammal-cat-like-mammal.png");
+        background-size: 80px 40px;
+        background-position: 60px 0;
+        transition: 0.5s ease;
+        z-index: 5;
+      }
+
+      .bot .profile-img {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        background-image: url("https://w7.pngwing.com/pngs/234/79/png-transparent-black-robot-face-illustration-robotics-technology-computer-icons-internet-bot-robotics-humanoid-robot-industrial-robot-area-thumbnail.png");
+        background-size: 40px 40px;
+
+        transition: 0.5s ease;
+        z-index: 5;
+      }
+
+      .user .profile {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      .bot .profile {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+
+      .profile-img:hover {
+        transform: scale(3);
+      }
     </style>
   </head>
   <body>
@@ -120,7 +161,12 @@
       <div class="chat-container">
         <div class="message bot">
           <div>
-            <div class="name">myBot</div>
+            <div>
+              <div class="profile">
+                <div class="profile-img"></div>
+                <div class="name">myBot</div>
+              </div>
+            </div>
             <div class="bubble">
               안녕하세요. 무엇을 도와드릴까요?
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -130,14 +176,20 @@
 
         <div class="message user">
           <div>
-            <div class="name">나</div>
+            <div class="profile">
+              <div class="name">나</div>
+              <div class="profile-img"></div>
+            </div>
             <div class="bubble">Flex로 채팅화면을 만들 수 있나?</div>
           </div>
         </div>
 
         <div class="message bot">
           <div>
-            <div class="name">myBot</div>
+            <div class="profile">
+              <div class="profile-img"></div>
+              <div class="name">myBot</div>
+            </div>
             <div class="bubble">
               안녕하세요. 무엇을 도와드릴까요?
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -147,14 +199,20 @@
 
         <div class="message user">
           <div>
-            <div class="name">나</div>
+            <div class="profile">
+              <div class="name">나</div>
+              <div class="profile-img"></div>
+            </div>
             <div class="bubble">Flex로 채팅화면을 만들 수 있나?</div>
           </div>
         </div>
 
         <div class="message bot">
           <div>
-            <div class="name">myBot</div>
+            <div class="profile">
+              <div class="profile-img"></div>
+              <div class="name">myBot</div>
+            </div>
             <div class="bubble">
               안녕하세요. 무엇을 도와드릴까요?
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -164,14 +222,20 @@
 
         <div class="message user">
           <div>
-            <div class="name">나</div>
+            <div class="profile">
+              <div class="name">나</div>
+              <div class="profile-img"></div>
+            </div>
             <div class="bubble">Flex로 채팅화면을 만들 수 있나?</div>
           </div>
         </div>
 
         <div class="message bot">
           <div>
-            <div class="name">myBot</div>
+            <div class="profile">
+              <div class="profile-img"></div>
+              <div class="name">myBot</div>
+            </div>
             <div class="bubble">
               안녕하세요. 무엇을 도와드릴까요?
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -181,16 +245,57 @@
 
         <div class="message user">
           <div>
-            <div class="name">나</div>
+            <div class="profile">
+              <div class="name">나</div>
+              <div class="profile-img"></div>
+            </div>
             <div class="bubble">Flex로 채팅화면을 만들 수 있나?</div>
           </div>
         </div>
       </div>
 
       <div class="chat-input">
-        <textarea name="" id="" placeholder="메시지를 입력하세요."></textarea>
+        <textarea
+          name=""
+          id="text-area"
+          placeholder="메시지를 입력하세요."
+        ></textarea>
         <button id="send-btn">전송</button>
       </div>
     </div>
+
+    <script>
+      const sendBtn = document.getElementById("send-btn");
+      const chatContainer = document.querySelector(".chat-container");
+      const textArea = document.querySelector("#text-area");
+
+      const sendMessage = () => {
+        const userMessage = textArea.value.trim(); // 빈칸 없애기
+        if (userMessage) {
+          const userDiv = document.createElement("div");
+          userDiv.className = "message user";
+          userDiv.innerHTML = `<div>
+            <div class="profile">
+              <div class="name">나</div>
+              <div class="profile-img"></div>
+            </div>
+            <div class="bubble">${userMessage}</div>
+          </div>
+        </div>`;
+          chatContainer.appendChild(userDiv);
+          textArea.value = "";
+          chatContainer.scrollTop = chatContainer.scrollHeight; // 스크롤을 맨 아래로 이동
+        }
+      };
+
+      sendBtn.addEventListener("click", sendMessage);
+      textArea.addEventListener("keydown", (event) => {
+        console.log(!event.shiftKey && !event.ctrlKey);
+        if (event.key === "Enter" && !event.shiftKey) {
+          event.preventDefault(); // 원래 기능을 막는 함수
+          sendMessage();
+        }
+      });
+    </script>
   </body>
 </html>
