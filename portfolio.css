@@ -1,0 +1,169 @@
+body {
+        margin: 0;
+        padding: 0;
+        height: 300vh;
+        background-color: #f5f5f5;
+        color: #333333;
+      }
+      .hidden {
+        display: none;
+      }
+      button {
+        border: none;
+        cursor: pointer;
+        height: 40px;
+        width: 200px;
+
+        background-color: #f5f5f500;
+        font-size: 1.2rem;
+      }
+      .header {
+        top: 0;
+        z-index: 5;
+      }
+      .header_frame {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+      }
+      .header_content {
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+      }
+      .header_scroll {
+        background-color: white;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+      }
+      nav {
+        display: flex;
+        justify-content: space-evenly;
+        width: 400px;
+        gap: 20px;
+      }
+      #down_scroll {
+        position: absolute;
+        bottom: 150px;
+
+        background-color: #ff4f00;
+        color: white;
+        border-radius: 30px;
+        font-size: medium;
+      }
+      section {
+        width: 100%;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        border-collapse: collapse;
+      }
+      .sec1 {
+        padding-top: 120px;
+        height: 100vh;
+        background-color: #f5f5f5;
+        background-image: url(./ref/profile_image_light_resize.png);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-size: cover;
+
+        display: flex;
+        justify-content: center;
+
+        position: relative;
+      }
+      /* 로고를 제외한 한페이지 높이 - 831px, 100vh => 911px */
+      .sec2 {
+        height: 554px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 30px;
+      }
+      .sec3 {
+        height: 277px;
+
+        display: flex;
+        justify-content: center;
+        align-items: start;
+      }
+
+      #profile {
+        width: 600px;
+        height: 450px;
+        background-color: #fbfbf8;
+        border-radius: 30px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+      }
+      #desc {
+        width: 300px;
+        height: 450px;
+        background-color: #fbfbf8;
+        border-radius: 30px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+      }
+      #etc {
+        width: 930px;
+        height: 240px;
+        padding: 25px;
+        background-color: #fbfbf8;
+        border-radius: 30px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+        box-sizing: border-box;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        position: relative;
+
+        overflow: hidden;
+      }
+      .sec4 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .sec4_frame {
+        width: 1700px;
+        height: 911px;
+        background-color: white;
+      }
+      .stack {
+        width: 70px;
+        height: 25px;
+        text-align: center;
+        line-height: 175%;
+        border-radius: 30px;
+        font-size: small;
+
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+
+        background-color: #ff4f00; /* #7431f9 */
+        color: white;
+
+        transition: 0.3s ease;
+      }
+      .stack:hover {
+        transform: scale(1.3);
+      }
+
+      .stack_frame {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: 25px;
+      }
+      .stack_desc {
+        width: 880px;
+        height: 150px;
+        /* background-color: black; */
+
+        padding: 7px;
+        box-sizing: border-box;
+      }
