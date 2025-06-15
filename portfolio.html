@@ -3,34 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="./portfolio.css" />
     <style></style>
   </head>
   <body>
     <header class="header header_frame">
       <div id="header" class="header header_content">
-        <button id="logo" class="header logo">로고</button>
+        <button id="logo" class="header logo">Portfolio</button>
 
         <nav>
-          <button>버튼1</button>
-          <button>버튼2</button>
-          <button>버튼3</button>
+          <button id="a_home">Home</button>
+          <button id="a_sec1">profile</button>
+          <button id="a_sec2">skill</button>
+          <button id="a_sec3">sec3</button>
         </nav>
       </div>
     </header>
 
-    <section class="sec1">
-      <h1>간단한 소개 및 적당한 배경이미지</h1>
+    <section class="home" id="home">
+      <h1>안녕하세요. 신입 개발자 엄보성 입니다.</h1>
       <button id="down_scroll">더 알아보기</button>
     </section>
 
-    <section class="sec2">
-      <div id="profile"></div>
-      <div id="desc"></div>
+    <section class="sec1" id="sec1">
+      <div id="profile">
+        <div id="profile_title">About</div>
+
+        <div class="profile_frame_1">
+          <div id="profile_image" style="text-align: center">사진위치</div>
+          <div id="profile_text">
+            <div>이름 : 엄보성</div>
+            <div>생년월일 : 1997.07.25</div>
+            <div>Email : workebs0012@gmail.com</div>
+          </div>
+        </div>
+        <div id="profile_list">
+          <div>2016.03 ~ 2023.02 - 금오공과대학교 컴퓨터공학과 재학</div>
+          <div>
+            2025.02 ~ 2025.07 - 부경대학교 빅데이터를 활용한 자바개발자 과정
+            수료
+          </div>
+        </div>
+      </div>
+      <div id="desc">
+        <div id="profile_desc">안녕하세요</div>
+        <hr />
+        <div id="spec">
+          자격증
+          <div>
+            정보처리기사 <br />
+            취득일 - 2024.12
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="sec3">
+    <section class="sec2" id="sec2">
       <div id="etc">
         <div class="stack_frame">
           <button
@@ -87,8 +116,17 @@
       </div>
     </section>
 
-    <section class="sec4">
-      <div class="sec4_frame"></div>
+    <section class="sec3" id="sec3">
+      <div class="sec3_frame">
+        <h2>작업물</h2>
+        <br />
+        <hr />
+        <div id="porject_frame">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </section>
   </body>
   <script>
@@ -99,10 +137,10 @@
     const stack = document.querySelectorAll(".stack");
     const stack_desc = document.querySelectorAll(".stack_desc");
 
+    let lastScroll = 0;
+
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-
-      // console.log(scrollY);
 
       if (scrollY >= 100) {
         header.classList.add("header_scroll");
@@ -121,12 +159,38 @@
     const stackClick = (targetId, curStack) => {
       stack.forEach((v) => {
         v.style.transform = "";
+        v.classList.remove("clicked");
       });
       stack_desc.forEach((v) => {
         v.classList.add("hidden");
       });
       document.getElementById(targetId).classList.remove("hidden");
+      curStack.classList.add("clicked");
       curStack.style.transform = "scale(1.3)";
     };
+
+    document.getElementById("a_home").addEventListener("click", () => {
+      const pos = document.getElementById("home").offsetTop - headerHeight;
+      console.log(pos);
+      window.scrollTo({ top: pos, behavior: "smooth" });
+    });
+
+    document.getElementById("a_sec1").addEventListener("click", () => {
+      const pos = document.getElementById("sec1").offsetTop - headerHeight;
+      console.log(pos);
+      window.scrollTo({ top: pos, behavior: "smooth" });
+    });
+
+    document.getElementById("a_sec2").addEventListener("click", () => {
+      const pos = document.getElementById("sec2").offsetTop - headerHeight;
+      console.log(pos);
+      window.scrollTo({ top: pos, behavior: "smooth" });
+    });
+
+    document.getElementById("a_sec3").addEventListener("click", () => {
+      const pos = document.getElementById("sec3").offsetTop - headerHeight;
+      console.log(pos);
+      window.scrollTo({ top: pos, behavior: "smooth" });
+    });
   </script>
 </html>
