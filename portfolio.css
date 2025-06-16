@@ -124,6 +124,7 @@ section > div > h1 {
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
@@ -160,7 +161,8 @@ section > div > h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 30px;
+  margin: 20px 0 15px 50px;
 }
 .clicked {
   background-color: #ff4f00;
@@ -226,6 +228,11 @@ section > div > h1 {
   padding: 25px;
 }
 
+.tab_buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #porject_frame {
   display: flex;
   flex-direction: row;
@@ -233,7 +240,7 @@ section > div > h1 {
 
   margin-top: 40px;
 }
-
+/* 
 #porject_frame div {
   width: 300px;
   height: 300px;
@@ -241,4 +248,73 @@ section > div > h1 {
   background-color: #fbfbf8;
   border-radius: 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+} */
+
+.project_card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+
+  gap: 20px;
+}
+
+.project_card:hover {
+  transform: translateY(-5px);
+}
+
+.project_image {
+  height: 80%;
+  overflow: hidden;
+}
+
+.project_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project_info {
+  height: 20%;
+  background-color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.project_info h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.project_info p {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+  color: black;
+}
+
+/* 오버레이 */
+.project_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은색 */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.3s;
+}
+
+.project_card:hover .project_overlay {
+  opacity: 1;
 }

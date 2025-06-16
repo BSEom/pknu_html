@@ -64,67 +64,107 @@
 
     <section class="sec2" id="sec2">
       <div id="etc">
-        <div class="stack_frame">
-          <button
-            id="html_stack"
-            class="stack"
-            onclick="stackClick('html_desc', this)"
-          >
-            html
-          </button>
-          <button
-            id="java_stack"
-            class="stack"
-            onclick="stackClick('java_desc', this)"
-          >
-            java
-          </button>
-          <button
-            id="spring_stack"
-            class="stack"
-            onclick="stackClick('spring_desc', this)"
-          >
-            spring
-          </button>
-          <button
-            id="css_stack"
-            class="stack"
-            onclick="stackClick('css_desc', this)"
-          >
-            css
-          </button>
-          <button
-            id="js_stack"
-            class="stack"
-            onclick="stackClick('js_desc', this)"
-          >
-            js
-          </button>
-          <button
-            id="c_stack"
-            class="stack"
-            onclick="stackClick('c_desc', this)"
-          >
-            c
-          </button>
+        <!-- 탭 버튼 -->
+        <div class="tab_buttons">
+          <button onclick="showTab('frontend')">프론트엔드</button>
+          <button onclick="showTab('backend')">백엔드</button>
+          <button onclick="showTab('else')">기타</button>
         </div>
-        <div class="stack_desc_frame">
-          <div id="html_desc" class="stack_desc hidden">html 설명</div>
-          <div id="java_desc" class="stack_desc hidden">java 설명</div>
-          <div id="spring_desc" class="stack_desc hidden">spring 설명</div>
-          <div id="css_desc" class="stack_desc hidden">css 설명</div>
-          <div id="js_desc" class="stack_desc hidden">js 설명</div>
-          <div id="c_desc" class="stack_desc hidden">c 설명</div>
+
+        <!-- 각 탭 콘텐츠 -->
+        <div class="tab_content" id="frontend">
+          <div class="stack_frame">
+            <button class="stack" onclick="stackClick('html_desc', this)">
+              HTML
+            </button>
+            <button class="stack" onclick="stackClick('css_desc', this)">
+              CSS
+            </button>
+            <button class="stack" onclick="stackClick('js_desc', this)">
+              JS
+            </button>
+          </div>
+          <div class="stack_desc_frame">
+            <div id="html_desc" class="stack_desc hidden">html 설명</div>
+            <div id="css_desc" class="stack_desc hidden">css 설명</div>
+            <div id="js_desc" class="stack_desc hidden">js 설명</div>
+          </div>
+        </div>
+
+        <div class="tab_content hidden" id="backend">
+          <div class="stack_frame">
+            <button class="stack" onclick="stackClick('java_desc', this)">
+              Java
+            </button>
+            <button class="stack" onclick="stackClick('spring_desc', this)">
+              Spring
+            </button>
+          </div>
+          <div class="stack_desc_frame">
+            <div id="java_desc" class="stack_desc hidden">java 설명</div>
+            <div id="spring_desc" class="stack_desc hidden">spring 설명</div>
+          </div>
+        </div>
+
+        <div class="tab_content hidden" id="else">
+          <div class="stack_frame">
+            <button class="stack" onclick="stackClick('c_desc', this)">
+              C
+            </button>
+            <button class="stack" onclick="stackClick('docker_desc', this)">
+              Docker
+            </button>
+          </div>
+          <div class="stack_desc_frame">
+            <div id="c_desc" class="stack_desc hidden">c 설명</div>
+            <div id="docker_desc" class="stack_desc hidden">docker 설명</div>
+          </div>
         </div>
       </div>
 
       <div class="sec2_frame">
         <h2>작업물</h2>
         <hr />
+        <br />
         <div id="porject_frame">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="project_card">
+            <div class="project_image">
+              <img src="./thumbnail.png" alt="프로젝트 이미지" />
+            </div>
+            <div class="project_info">
+              <h3>제목</h3>
+              <p>간단한 설명</p>
+            </div>
+            <div class="project_overlay">
+              <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
+            </div>
+          </div>
+
+          <div class="project_card">
+            <div class="project_image">
+              <img src="./thumbnail.png" alt="프로젝트 이미지" />
+            </div>
+            <div class="project_info">
+              <h3>제목</h3>
+              <p>간단한 설명</p>
+            </div>
+            <div class="project_overlay">
+              <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
+            </div>
+          </div>
+
+          <div class="project_card">
+            <div class="project_image">
+              <img src="./thumbnail.png" alt="프로젝트 이미지" />
+            </div>
+            <div class="project_info">
+              <h3>제목</h3>
+              <p>간단한 설명</p>
+            </div>
+            <div class="project_overlay">
+              <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -205,5 +245,19 @@
       console.log(pos);
       window.scrollTo({ top: pos, behavior: "smooth" });
     });
+
+    function showTab(tabId) {
+      const allTabs = document.querySelectorAll(".tab_content");
+      allTabs.forEach((tab) => tab.classList.add("hidden"));
+
+      const selectedTab = document.getElementById(tabId);
+      if (selectedTab) {
+        selectedTab.classList.remove("hidden");
+      }
+
+      // 설명도 전부 숨기기
+      const allDescs = document.querySelectorAll(".stack_desc");
+      allDescs.forEach((desc) => desc.classList.add("hidden"));
+    }
   </script>
 </html>
