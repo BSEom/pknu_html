@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./portfolio.css" />
+    <link rel="stylesheet" href="./portfolio_gpt.css" />
     <link
       href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css"
       rel="stylesheet"
@@ -20,7 +20,7 @@
           <button id="a_home">Home</button>
           <button id="a_sec1">Profile</button>
           <button id="a_sec2">Skill</button>
-          <button id="a_sec3">project</button>
+          <button id="a_sec3">sec3</button>
         </nav>
       </div>
     </header>
@@ -40,53 +40,28 @@
         <div class="profile_frame_1">
           <div id="profile_image" style="text-align: center">사진위치</div>
           <div id="profile_text">
-            <table id="profile_table">
-              <tr>
-                <th>이름 :</th>
-                <td>엄보성</td>
-              </tr>
-              <tr>
-                <th>생년월일 :</th>
-                <td>1997.07.25</td>
-              </tr>
-              <tr>
-                <th>Email :</th>
-                <td>workebs0012@gmail.com</td>
-              </tr>
-            </table>
+            <div>이름 : 엄보성</div>
+            <div>생년월일 : 1997.07.25</div>
+            <div>Email : workebs0012@gmail.com</div>
           </div>
         </div>
         <div id="profile_list">
-          <table id="profile_list_table">
-            <!-- <tr>
-              <th colspan="2">연혁</th>
-            </tr> -->
-            <tr>
-              <th>2016.03 ~ 2023.02 -</th>
-              <td>국립금오공과대학교 컴퓨터공학과 졸업</td>
-            </tr>
-            <tr>
-              <th>2025.02 ~ 2025.07 -</th>
-              <td>부경대학교 <br />빅데이터를 활용한 자바개발자 과정 수료</td>
-            </tr>
-          </table>
+          <div>2016.03 ~ 2023.02 - 금오공과대학교 컴퓨터공학과 졸업</div>
+          <div>
+            2025.02 ~ 2025.07 - 부경대학교 빅데이터를 활용한 자바개발자 과정
+            수료
+          </div>
         </div>
       </div>
       <div id="desc">
         <div id="profile_desc">안녕하세요</div>
+        <hr />
         <div id="spec">
-          <table id="spec_table">
-            <tr>
-              <th colspan="2">자격증</th>
-            </tr>
-            <tr>
-              <td colspan="2">정보처리기사</td>
-            </tr>
-            <tr>
-              <td>취득일 -</td>
-              <td>2024.12.11</td>
-            </tr>
-          </table>
+          자격증
+          <div>
+            정보처리기사 <br />
+            취득일 - 2024.12
+          </div>
         </div>
       </div>
     </section>
@@ -95,12 +70,13 @@
       <div id="etc">
         <!-- 탭 버튼 -->
         <div class="tab_buttons">
-          <button onclick="showTab('stack')">Tech Stack</button>
-          <button onclick="showTab('tool')">Tools</button>
+          <button onclick="showTab('frontend')">프론트엔드</button>
+          <button onclick="showTab('backend')">백엔드</button>
+          <button onclick="showTab('else')">기타</button>
         </div>
 
         <!-- 각 탭 콘텐츠 -->
-        <div class="tab_content" id="stack">
+        <div class="tab_content" id="frontend">
           <div class="stack_frame">
             <button class="stack" onclick="stackClick('html_desc', this)">
               HTML
@@ -111,27 +87,30 @@
             <button class="stack" onclick="stackClick('js_desc', this)">
               JS
             </button>
+          </div>
+          <div class="stack_desc_frame">
+            <div id="html_desc" class="stack_desc hidden">html 설명</div>
+            <div id="css_desc" class="stack_desc hidden">css 설명</div>
+            <div id="js_desc" class="stack_desc hidden">js 설명</div>
+          </div>
+        </div>
+
+        <div class="tab_content hidden" id="backend">
+          <div class="stack_frame">
             <button class="stack" onclick="stackClick('java_desc', this)">
               Java
             </button>
             <button class="stack" onclick="stackClick('spring_desc', this)">
               Spring
             </button>
-            <button class="stack" onclick="stackClick('c_desc', this)">
-              C
-            </button>
           </div>
           <div class="stack_desc_frame">
-            <div id="html_desc" class="stack_desc hidden">html 설명</div>
-            <div id="css_desc" class="stack_desc hidden">css 설명</div>
-            <div id="js_desc" class="stack_desc hidden">js 설명</div>
             <div id="java_desc" class="stack_desc hidden">java 설명</div>
             <div id="spring_desc" class="stack_desc hidden">spring 설명</div>
-            <div id="c_desc" class="stack_desc hidden">c 설명</div>
           </div>
         </div>
 
-        <div class="tab_content hidden" id="tool">
+        <div class="tab_content hidden" id="else">
           <div class="stack_frame">
             <button class="stack" onclick="stackClick('c_desc', this)">
               C
@@ -147,7 +126,7 @@
         </div>
       </div>
 
-      <div class="sec2_frame" id="proj">
+      <div class="sec2_frame">
         <h2>작업물</h2>
         <hr />
         <br />
@@ -266,7 +245,7 @@
     });
 
     document.getElementById("a_sec3").addEventListener("click", () => {
-      const pos = document.getElementById("proj").offsetTop - headerHeight;
+      const pos = document.getElementById("sec3").offsetTop - headerHeight;
       console.log(pos);
       window.scrollTo({ top: pos, behavior: "smooth" });
     });
