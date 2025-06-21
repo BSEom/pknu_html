@@ -86,6 +86,16 @@ section > div > h1 {
   justify-content: center;
   position: relative;
 }
+
+.home > div {
+  text-align: left;
+  align-self: center;      
+  width: 600px;            
+  margin-right: auto;     
+  padding-left: 100px;    
+  transform: translate(150px ,-130px);
+}
+
 /* 로고를 제외한 한페이지 높이 - 831px, 100vh => 911px */
 .sec1 {
   height: 831px;
@@ -133,6 +143,19 @@ section > div > h1 {
   position: relative;
   overflow: hidden;
 }
+
+.tab_buttons button{
+  width: 100%;
+  transition: 0.3s ease;
+  border-radius: 15px;
+  
+}
+
+.tab_buttons button.active_tab {
+  background-color: #ff4f00; /* 선택된 탭 색 */
+  color: white;
+}
+
 .sec3 {
   display: flex;
   justify-content: center;

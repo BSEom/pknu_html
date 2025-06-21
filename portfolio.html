@@ -9,7 +9,7 @@
       href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css"
       rel="stylesheet"
     />
-    <style></style>
+    <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
   </head>
   <body>
     <header class="header header_frame">
@@ -27,8 +27,8 @@
 
     <section class="home" id="home">
       <div>
-        <h1>안녕하세요. 신입 개발자 엄보성 입니다.</h1>
-        <h2>열심히 하겠습니다.</h2>
+        <h1 id="t1"></h1>
+        <h2 id="t2"></h2>
       </div>
       <button id="down_scroll">더 알아보기</button>
     </section>
@@ -280,9 +280,30 @@
         selectedTab.classList.remove("hidden");
       }
 
+      const tabButtons = document.querySelectorAll(".tab_buttons button");
+      tabButtons.forEach((btn) => btn.classList.remove("active_tab"));
+
+      // 현재 클릭한 버튼에만 active_tab 추가
+      const clickedButton = Array.from(tabButtons).find((btn) =>
+        btn.getAttribute("onclick").includes(tabId)
+      );
+      if (clickedButton) {
+        clickedButton.classList.add("active_tab");
+      }
+
       // 설명도 전부 숨기기
       const allDescs = document.querySelectorAll(".stack_desc");
       allDescs.forEach((desc) => desc.classList.add("hidden"));
     }
+
+    new TypeIt("#t1", {
+      strings: "안녕하세요. 신입 개발자 엄보성 입니다.",
+    }).go();
+
+    new TypeIt("#t2", {
+      startDelay: 3000,
+    })
+      .type("열심히 하겠습니다.")
+      .go();
   </script>
 </html>
