@@ -8,8 +8,9 @@ body {
   height: 300vh;
   background-color: #f5f5f5;
   color: #333333;
-  font-family: 'NanumGothicBold';
-  font-size: large;
+  /* font-family: 'NanumGothicBold';
+  font-size: large; */
+  font-family: "Pretendard", sans-serif;
 }
 .hidden {
   display: none;
@@ -89,11 +90,13 @@ section > div > h1 {
 
 .home > div {
   text-align: left;
-  align-self: center;      
-  width: 600px;            
-  margin-right: auto;     
-  padding-left: 100px;    
-  transform: translate(150px ,-130px);
+  align-self: center;
+  width: 600px;
+  height: 140px;
+  margin-right: auto;
+  padding-left: 100px;
+  transform: translate(150px, -130px);
+  position: relative;
 }
 
 /* 로고를 제외한 한페이지 높이 - 831px, 100vh => 911px */
@@ -144,11 +147,10 @@ section > div > h1 {
   overflow: hidden;
 }
 
-.tab_buttons button{
+.tab_buttons button {
   width: 100%;
   transition: 0.3s ease;
   border-radius: 15px;
-  
 }
 
 .tab_buttons button.active_tab {
@@ -216,9 +218,7 @@ section > div > h1 {
   margin: 40px;
 
   border-radius: 10px;
-  
 }
-
 
 .profile_frame_1 {
   display: flex;
@@ -246,8 +246,7 @@ section > div > h1 {
   border-top: #555;
 
   display: flex;
-  
-  
+
   /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); */
 }
 
@@ -256,7 +255,7 @@ section > div > h1 {
   border-spacing: 10px 10px;
 }
 
-#profile_table th{
+#profile_table th {
   text-align: end;
 }
 
@@ -280,12 +279,18 @@ section > div > h1 {
 
   display: flex;
   justify-content: center;
-
 }
 
 #profile_desc {
   height: 283px;
   border-bottom: 2px solid lightgray;
+  text-align: start;
+  line-height: 1.2;
+
+  /* text-align: center; */
+  white-space: pre-line; /* <br />를 줄바꿈으로 인식 */
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 20px 0; /* 위아래 여백 */
 }
 
 #desc div {
@@ -382,4 +387,13 @@ section > div > h1 {
 
 .project_card:hover .project_overlay {
   opacity: 1;
+}
+
+#t1 {
+  /* font-size: 1.8rem; */
+  color: #333;
+  white-space: pre-line;
+
+  position: absolute;
+  transform: translateY(-30%);
 }

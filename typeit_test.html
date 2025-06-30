@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TypeIt 테스트</title>
+    <!-- TypeIt 최신 버전 CDN -->
+    <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
+    <style>
+      body {
+        font-family: "Pretendard", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+      #typing {
+        font-size: 1.8rem;
+        color: #333;
+        white-space: pre-line; /* 줄바꿈을 적용하기 위해 사용 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="typing"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new TypeIt("#typing", {
+          speed: 70,
+          lifeLike: true,
+          cursor: true,
+          loop: false,
+          waitUntilVisible: true,
+        })
+          .type("안녕하세요.")
+          .break()
+          .pause(500)
+          .type("꾸준히 배우고 성장하는")
+          .break()
+          .type("신입 개발자 홍길동입니다.")
+          .go();
+      });
+    </script>
+  </body>
+</html>
