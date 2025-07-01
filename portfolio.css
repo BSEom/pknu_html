@@ -285,7 +285,7 @@ section > div > h1 {
   height: 283px;
   border-bottom: 2px solid lightgray;
   text-align: start;
-  line-height: 1.2;
+  line-height: 1.4;
 
   /* text-align: center; */
   white-space: pre-line; /* <br />를 줄바꿈으로 인식 */

@@ -20,7 +20,7 @@
           <button id="a_home">Home</button>
           <button id="a_sec1">Profile</button>
           <button id="a_sec2">Skill</button>
-          <button id="a_sec3">project</button>
+          <button id="a_sec3">Project</button>
         </nav>
       </div>
     </header>
@@ -75,11 +75,12 @@
       <div id="desc">
         <div id="profile_desc">
           안녕하세요. <br />
-          꾸준히 배우고 성장하는 신입 개발자 엄보성입니다. <br />
-          스스로 학습하고 직접 구현해보는 과정에서 많은 것을 배우고 있으며,
-          <br />
-          문제를 함께 해결해나가는 과정 속에서 협업과 소통의 중요함을 항상
-          체감하고 있습니다.
+          꾸준히 배우고 성장하는 신입 개발자 <br />엄보성입니다. <br />
+          스스로 학습하고 직접 구현해보는 과정에서
+          <br. />많은 것을 배우고 있으며,
+          <br. />
+          문제를 함께 해결해나가는 과정 속에서 <br. />
+          협업과 소통의 중요성을 늘 중요하게 생각하며 실천하고 있습니다.
         </div>
         <div id="spec">
           <table id="spec_table">
@@ -102,30 +103,55 @@
       <div id="etc">
         <!-- 탭 버튼 -->
         <div class="tab_buttons">
-          <button onclick="showTab('stack')">Tech Stack</button>
+          <button onclick="showTab('stack')" class="active_tab">
+            Tech Stack
+          </button>
           <button onclick="showTab('tool')">Tools</button>
         </div>
 
         <!-- 각 탭 콘텐츠 -->
         <div class="tab_content" id="stack">
           <div class="stack_frame">
-            <button class="stack" onclick="stackClick('html_desc', this)">
+            <button
+              id="html"
+              class="stack"
+              onclick="stackClick('html_desc', this)"
+            >
               HTML
             </button>
-            <button class="stack" onclick="stackClick('css_desc', this)">
+            <button
+              id="css"
+              class="stack"
+              onclick="stackClick('css_desc', this)"
+            >
               CSS
             </button>
-            <button class="stack" onclick="stackClick('js_desc', this)">
+            <button id="js" class="stack" onclick="stackClick('js_desc', this)">
               JS
             </button>
-            <button class="stack" onclick="stackClick('java_desc', this)">
+            <button
+              id="java"
+              class="stack"
+              onclick="stackClick('java_desc', this)"
+            >
               Java
             </button>
-            <button class="stack" onclick="stackClick('spring_desc', this)">
+            <button
+              id="spring"
+              class="stack"
+              onclick="stackClick('spring_desc', this)"
+            >
               Spring
             </button>
-            <button class="stack" onclick="stackClick('c_desc', this)">
+            <button id="c" class="stack" onclick="stackClick('c_desc', this)">
               C
+            </button>
+            <button
+              id="oracle"
+              class="stack"
+              onclick="stackClick('oracle_desc', this)"
+            >
+              Oracle
             </button>
           </div>
           <div class="stack_desc_frame">
@@ -135,21 +161,26 @@
             <div id="java_desc" class="stack_desc hidden">java 설명</div>
             <div id="spring_desc" class="stack_desc hidden">spring 설명</div>
             <div id="c_desc" class="stack_desc hidden">c 설명</div>
+            <div id="oracle_desc" class="stack_desc hidden">oracle 설명</div>
           </div>
         </div>
 
         <div class="tab_content hidden" id="tool">
           <div class="stack_frame">
-            <button class="stack" onclick="stackClick('c_desc', this)">
-              C
+            <button class="stack" onclick="stackClick('git_desc', this)">
+              Git
             </button>
             <button class="stack" onclick="stackClick('docker_desc', this)">
               Docker
             </button>
+            <button class="stack" onclick="stackClick('postman_desc', this)">
+              Postman
+            </button>
           </div>
           <div class="stack_desc_frame">
-            <div id="c_desc" class="stack_desc hidden">c 설명</div>
+            <div id="git_desc" class="stack_desc hidden">Git 설명</div>
             <div id="docker_desc" class="stack_desc hidden">docker 설명</div>
+            <div id="postman_desc" class="stack_desc hidden">postman 설명</div>
           </div>
         </div>
       </div>
@@ -164,12 +195,17 @@
               <img src="./thumbnail.png" alt="프로젝트 이미지" />
             </div>
             <div class="project_info">
-              <h3>제목</h3>
-              <p>간단한 설명</p>
+              <h3>소리를 조명으로 표현하는 앱</h3>
+              <p>
+                Android 기반의 청각장애인을 위한 <br />소리를 조명으로 표현하는
+                앱
+              </p>
             </div>
-            <div class="project_overlay">
-              <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
-            </div>
+            <a href="https://github.com/BSEom/capston">
+              <div class="project_overlay">
+                <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
+              </div>
+            </a>
           </div>
 
           <div class="project_card">
@@ -177,25 +213,32 @@
               <img src="./thumbnail.png" alt="프로젝트 이미지" />
             </div>
             <div class="project_info">
-              <h3>제목</h3>
-              <p>간단한 설명</p>
+              <h3>알뜰 051</h3>
+              <p>부산 지역별 최저가 상품 찾기 프로젝트</p>
             </div>
-            <div class="project_overlay">
-              <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
-            </div>
+            <a href="https://github.com/BSEom/teamP_t1">
+              <div class="project_overlay">
+                <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
+              </div>
+            </a>
           </div>
 
           <div class="project_card">
             <div class="project_image">
-              <img src="./thumbnail.png" alt="프로젝트 이미지" />
+              <img src="./kiosk_1.png" alt="프로젝트 이미지" />
             </div>
             <div class="project_info">
-              <h3>제목</h3>
-              <p>간단한 설명</p>
+              <h3>cafe kiosk</h3>
+              <p>Python, PyQt 기반의 키오스크 시스템</p>
             </div>
-            <div class="project_overlay">
-              <p>자세한 설명이 여기에 나옵니다. 마우스를 올려야 보여요.</p>
-            </div>
+            <a href="https://github.com/BSEom/miniP_kiosk">
+              <div class="project_overlay">
+                <p>
+                  크롤링을 통해 데이터를 DB에 저장하고, PyQt로 디자인한 Python
+                  기반의 <br />키오스크 시스템입니다.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
